@@ -84,7 +84,8 @@ export default class Main {
       let enemy = databus.enemys[i]
 
       if ( this.player.isCollideWith(enemy) ) {
-        databus.gameOver = true
+        // databus.gameOver = true
+
 
         break
       }

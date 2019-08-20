@@ -26,7 +26,7 @@ export default class Enemy extends Animation {
     // this.x = rnd(0, window.innerWidth - ENEMY_WIDTH)
     // this.y = -this.height
     this.x = this.width + window.innerWidth;
-    this.y = 60;
+    this.y = window.innerHeight - 120;
     this[__.speed] = 6
 
     this.visible = true
