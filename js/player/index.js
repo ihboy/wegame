@@ -113,6 +113,8 @@ export default class Player extends Sprite {
    * 射击时机由外部决定
    */
   shoot() {
+
+
     // let bullet = databus.pool.getItemByClass('bullet', Bullet)
     //
     // bullet.init(
