@@ -48,10 +48,7 @@ export default class Enemy extends Animation {
 
   // 每一帧更新子弹位置
   update() {
-
-    console.log("emeny updata");
-
-    this.x -= this[__.speed]
+    this.x -= 2
     // 对象回收
     if ( this.x > window.innerWidth + this.width )
       databus.removeEnemey(this)
