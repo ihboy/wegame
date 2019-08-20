@@ -15,16 +15,16 @@ export default class BackGround extends Sprite {
   constructor(ctx) {
     super(BG_IMG_SRC, BG_WIDTH, BG_HEIGHT)
 
-    this.render(ctx)
+    this.top = 0
 
-    this.left = 0
+    this.render(ctx)
   }
 
   update() {
-    this.left += -2
+    this.top += 2
 
-    if (this.left <= -screenWidth )
-      this.left = 0
+    if ( this.top >= screenHeight )
+      this.top = 0
   }
 
   /**
@@ -40,8 +40,8 @@ export default class BackGround extends Sprite {
       0,
       this.width,
       this.height,
-      screenWidth + this.left,
       0,
+      -screenHeight + this.top,
       screenWidth,
       screenHeight
     )
@@ -52,8 +52,8 @@ export default class BackGround extends Sprite {
       0,
       this.width,
       this.height,
-      this.left,      
       0,
+      this.top,
       screenWidth,
       screenHeight
     )

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b980c420-1d83-475b-9dca-9f5306ce31f5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.json" beforeDir="false" afterPath="$PROJECT_DIR$/game.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/bg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/animation.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/base/animation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/pool.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/base/pool.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/sprite.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/base/sprite.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/databus.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/databus.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs/symbol.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/libs/symbol.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs/weapp-adapter.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/libs/weapp-adapter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/npc/enemy.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/npc/enemy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/player/bullet.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/player/bullet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/player/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/player/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/runtime/background.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/runtime/background.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/runtime/gameinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/runtime/gameinfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/runtime/music.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/runtime/music.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/project.config.json" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/wegame.iml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1PfWh0HaIu0D7hXkRGbycg9rD6O" />
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b980c420-1d83-475b-9dca-9f5306ce31f5" name="Default Changelist" comment="" />
+      <created>1566265746342</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1566265746342</updated>
+      <workItem from="1566265747418" duration="1388000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
