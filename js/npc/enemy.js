@@ -23,10 +23,11 @@ export default class Enemy extends Animation {
   }
 
   init(speed) {
-    this.x = rnd(0, window.innerWidth - ENEMY_WIDTH)
-    this.y = -this.height
-
-    this[__.speed] = speed
+    // this.x = rnd(0, window.innerWidth - ENEMY_WIDTH)
+    // this.y = -this.height
+    this.x = this.width + window.innerWidth;
+    this.y = 60;
+    this[__.speed] = 6
 
     this.visible = true
   }
@@ -47,10 +48,12 @@ export default class Enemy extends Animation {
 
   // 每一帧更新子弹位置
   update() {
-    this.y += this[__.speed]
 
+    console.log("emeny updata");
+
+    this.x -= this[__.speed]
     // 对象回收
-    if ( this.y > window.innerHeight + this.height )
+    if ( this.x > window.innerWidth + this.width )
       databus.removeEnemey(this)
   }
 }

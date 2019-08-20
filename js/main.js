@@ -49,7 +49,11 @@ export default class Main {
    * 帧数取模定义成生成的频率
    */
   enemyGenerate() {
-    if ( databus.frame % 30 === 0 ) {
+    if ( databus.frame % 300 === 0 ) {
+
+      console.log("refresh emeny")
+
+
       let enemy = databus.pool.getItemByClass('enemy', Enemy)
       enemy.init(6)
       databus.enemys.push(enemy)
