@@ -85,7 +85,7 @@ export default class Main {
 
       if ( this.player.isCollideWith(enemy) ) {
         // databus.gameOver = true
-
+        
 
         break
       }
