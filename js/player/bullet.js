@@ -17,20 +17,21 @@ export default class Bullet extends Sprite {
   }
 
   init(x, y, speed) {
-    this.x = x
-    this.y = y
-
-    this[__.speed] = speed
-
-    this.visible = true
+    // return;
+    // this.x = x
+    // this.y = y
+    //
+    // this[__.speed] = speed
+    //
+    // this.visible = true
   }
 
   // 每一帧更新子弹位置
   update() {
-    this.y -= this[__.speed]
-
-    // 超出屏幕外回收自身
-    if ( this.y < -this.height )
-      databus.removeBullets(this)
+    // this.y -= this[__.speed]
+    //
+    // // 超出屏幕外回收自身
+    // if ( this.y < -this.height )
+    //   databus.removeBullets(this)
   }
 }
