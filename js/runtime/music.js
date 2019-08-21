@@ -12,7 +12,7 @@ export default class Music {
 
     this.bgmAudio = new Audio()
     this.bgmAudio.loop = true
-    this.bgmAudio.src  = 'audio/bgm.mp3'
+    this.bgmAudio.src  = 'audio/bg.mp3'
 
     this.shootAudio     = new Audio()
     this.shootAudio.src = 'audio/bullet.mp3'
@@ -28,8 +28,8 @@ export default class Music {
   }
 
   playShoot() {
-    this.shootAudio.currentTime = 0
-    this.shootAudio.play()
+    // this.shootAudio.currentTime = 0
+    // this.shootAudio.play()
   }
 
   playExplosion() {
