@@ -21,7 +21,7 @@ export default class Animation extends Sprite {
     this.loop = false
 
     // 每一帧的时间间隔
-    this.interval = 1000 / 60
+    this.interval = 1000 / 30
 
     // 帧定时器
     this[__.timer] = null
@@ -69,7 +69,7 @@ export default class Animation extends Sprite {
   }
 
   // 播放预定的帧动画
-  playAnimation(index = 0, loop = false) {
+  playAnimation(index = 0, loop = true) {
     // 动画播放的时候精灵图不再展示，播放帧动画的具体帧
     this.visible   = false
 
@@ -79,7 +79,7 @@ export default class Animation extends Sprite {
     this.index     = index
 
     if ( this.interval > 0 && this.count ) {
-      this[__.timer] = setInterval(
+        this[__.timer] = setInterval(
         this.frameLoop.bind(this),
         this.interval
       )
@@ -100,11 +100,14 @@ export default class Animation extends Sprite {
 
     if ( this.index > this.count - 1 ) {
       if ( this.loop ) {
+        console.log(2222222)
         this.index = 0
       }
 
       else {
-        this.index--
+          console.log(222222)
+
+          this.index--
         this.stop()
       }
     }

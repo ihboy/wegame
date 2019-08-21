@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b980c420-1d83-475b-9dca-9f5306ce31f5" name="Default Changelist" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/audio/bg.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/dog/1.png" afterPath="$PROJECT_DIR$/images/dog/1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/dog/10.png" afterPath="$PROJECT_DIR$/images/dog/10.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/dog/2.png" afterPath="$PROJECT_DIR$/images/dog/2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/dog/3.png" afterPath="$PROJECT_DIR$/images/dog/3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/dog/4.png" afterPath="$PROJECT_DIR$/images/dog/4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/dog/5.png" afterPath="$PROJECT_DIR$/images/dog/5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/dog/6.png" afterPath="$PROJECT_DIR$/images/dog/6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/dog/7.png" afterPath="$PROJECT_DIR$/images/dog/7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/dog/8.png" afterPath="$PROJECT_DIR$/images/dog/8.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/dog/9.png" afterPath="$PROJECT_DIR$/images/dog/9.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/runtime/music.js" afterPath="$PROJECT_DIR$/js/runtime/music.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/base/animation.js" afterPath="$PROJECT_DIR$/js/base/animation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/npc/enemy.js" afterPath="$PROJECT_DIR$/js/npc/enemy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/player/index.js" afterPath="$PROJECT_DIR$/js/player/index.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,81 +27,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="project.config.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project.config.json">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/player/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/game.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="589">
+              <caret line="37" column="31" lean-forward="true" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="20" column="53" lean-forward="false" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="music.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/runtime/music.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="background.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/runtime/background.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-              <folding>
-                <marker date="1566392788892" expanded="true" signature="324:413" ph="{...}" />
-                <marker date="1566392788892" expanded="true" signature="426:508" ph="{...}" />
-                <marker date="1566392788892" expanded="true" signature="637:1013" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gameinfo.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/runtime/gameinfo.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1566392788892" expanded="true" signature="355:1225" ph="{...}" />
+                <element signature="e#0#37#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -99,40 +42,33 @@
       <file leaf-file-name="enemy.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/npc/enemy.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="271">
+              <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="34" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
-                <marker date="1566392788891" expanded="true" signature="373:1161" ph="{...}" />
-                <marker date="1566392788891" expanded="true" signature="499:721" ph="{...}" />
-                <marker date="1566392788891" expanded="true" signature="765:1014" ph="{...}" />
-                <marker date="1566392788891" expanded="true" signature="919:981" ph="{...}" />
-                <marker date="1566392788891" expanded="true" signature="1042:1159" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bullet.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/player/bullet.js">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+            <state relative-caret-position="7">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding>
-                <element signature="e#0#37#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/player/index.js">
+      <file leaf-file-name="animation.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/base/animation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="460">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -143,10 +79,18 @@
     <findStrings>
       <find>bullet</find>
       <find>Bullet</find>
-      <find>enemy</find>
-      <find>Enemy</find>
       <find>emeny</find>
       <find>music</find>
+      <find>databus.score</find>
+      <find>enemy</find>
+      <find>Enemy</find>
+      <find>frameLoop</find>
+      <find>initExplosionAnimation</find>
+      <find>Player</find>
+      <find>player</find>
+      <find>playAnimation</find>
+      <find>shoot</find>
+      <find>dogRunAnimation</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -156,6 +100,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/js/runtime/music.js" />
+        <option value="$PROJECT_DIR$/js/npc/enemy.js" />
+        <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/js/player/index.js" />
+        <option value="$PROJECT_DIR$/js/base/animation.js" />
       </list>
     </option>
   </component>
@@ -215,6 +163,34 @@
               <item name="wegame" type="b2602c69:ProjectViewProjectNode" />
               <item name="wegame" type="462c0819:PsiDirectoryNode" />
               <item name="audio" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wegame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wegame" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wegame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wegame" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="dog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wegame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wegame" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wegame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wegame" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="npc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wegame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wegame" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="player" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -289,7 +265,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="263000" />
+    <option name="totallyTimeSpent" value="2562000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="984" extended-state="0" />
@@ -462,11 +438,6 @@
           <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <marker date="1566392788891" expanded="true" signature="373:1161" ph="{...}" />
-            <marker date="1566392788891" expanded="true" signature="499:721" ph="{...}" />
-            <marker date="1566392788891" expanded="true" signature="765:1014" ph="{...}" />
-            <marker date="1566392788891" expanded="true" signature="919:981" ph="{...}" />
-            <marker date="1566392788891" expanded="true" signature="1042:1159" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -486,16 +457,6 @@
         <state relative-caret-position="400">
           <caret line="20" column="53" lean-forward="false" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="53" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/runtime/gameinfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1566392788892" expanded="true" signature="355:1225" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -626,36 +587,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/player/bullet.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/images/enemy.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -686,35 +617,76 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/npc/enemy.js">
+    <entry file="file://$PROJECT_DIR$/js/runtime/music.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <marker date="1566392788891" expanded="true" signature="373:1161" ph="{...}" />
-            <marker date="1566392788891" expanded="true" signature="499:721" ph="{...}" />
-            <marker date="1566392788891" expanded="true" signature="765:1014" ph="{...}" />
-            <marker date="1566392788891" expanded="true" signature="919:981" ph="{...}" />
-            <marker date="1566392788891" expanded="true" signature="1042:1159" ph="{...}" />
-          </folding>
+        <state relative-caret-position="280">
+          <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/player/index.js">
+    <entry file="file://$PROJECT_DIR$/js/runtime/gameinfo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/player/bullet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/runtime/music.js">
+    <entry file="file://$PROJECT_DIR$/game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/npc/enemy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/player/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="37" column="31" lean-forward="true" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/base/animation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -35,6 +35,9 @@ export default class Main {
     this.bindLoop     = this.loop.bind(this)
     this.hasEventBind = false
 
+      this.player.playAnimation(0,true);
+
+
     // 清除上一局的动画
     window.cancelAnimationFrame(this.aniId);
 
@@ -131,11 +134,11 @@ export default class Main {
       }
     })
 
-    this.gameinfo.renderGameScore(ctx, databus.score)
+    // this.gameinfo.renderGameScore(ctx, databus.score)
 
     // 游戏结束停止帧循环
     if ( databus.gameOver ) {
-      this.gameinfo.renderGameOver(ctx, databus.score)
+      // this.gameinfo.renderGameOver(ctx, databus.score)
 
       if ( !this.hasEventBind ) {
         this.hasEventBind = true

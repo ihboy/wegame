@@ -6,14 +6,14 @@ const screenWidth    = window.innerWidth
 const screenHeight   = window.innerHeight
 
 // 玩家相关常量设置
-const PLAYER_IMG_SRC = 'images/png.png'
+const PLAYER_IMG_SRC = 'images/dog/5.png'
 // const PLAYER_IMG_SRC = 'images/hero.gif'
 const PLAYER_WIDTH   = 80
 const PLAYER_HEIGHT  = 80
 
 let databus = new DataBus()
 
-export default class Player extends Sprite {
+export default class Player extends Animation {
   constructor() {
     super(PLAYER_IMG_SRC, PLAYER_WIDTH, PLAYER_HEIGHT)
 
@@ -26,9 +26,10 @@ export default class Player extends Sprite {
 
     this.bullets = []
 
-    // this.dogRunAnimation()
-    // 初始化事件监听
+    this.dogRunAnimation()
+      // 初始化事件监听
     this.initEvent()
+
   }
 
   /**
@@ -111,11 +112,13 @@ export default class Player extends Sprite {
   }
   // 定义小狗跑步的动画
   dogRunAnimation() {
+
     let frames = []
     const EXPLO_IMG_PREFIX  = 'images/dog/'
     const EXPLO_FRAME_COUNT = 10
     for ( let i = 0;i < EXPLO_FRAME_COUNT;i++ ) {
       frames.push(EXPLO_IMG_PREFIX + (i + 1) + '.png')
+        console.log("dogs");
     }
     this.initFrames(frames)
   }

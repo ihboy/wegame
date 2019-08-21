@@ -19,7 +19,7 @@ export default class Enemy extends Animation {
   constructor() {
     super(ENEMY_IMG_SRC, ENEMY_WIDTH, ENEMY_HEIGHT)
 
-    this.initExplosionAnimation()
+    // this.initExplosionAnimation()
   }
 
   init(speed) {
