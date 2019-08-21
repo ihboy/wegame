@@ -7,8 +7,9 @@ const screenHeight   = window.innerHeight
 
 // 玩家相关常量设置
 const PLAYER_IMG_SRC = 'images/png.png'
+// const PLAYER_IMG_SRC = 'images/hero.gif'
 const PLAYER_WIDTH   = 80
-const PLAYER_HEIGHT  = 60
+const PLAYER_HEIGHT  = 80
 
 let databus = new DataBus()
 
