@@ -1,7 +1,7 @@
 import Sprite   from '../base/sprite'
 import Bullet   from './bullet'
 import DataBus  from '../databus'
-
+import Animation from '../base/animation'
 const screenWidth    = window.innerWidth
 const screenHeight   = window.innerHeight
 
@@ -26,6 +26,7 @@ export default class Player extends Sprite {
 
     this.bullets = []
 
+    // this.dogRunAnimation()
     // 初始化事件监听
     this.initEvent()
   }
@@ -108,6 +109,17 @@ export default class Player extends Sprite {
       this.touched = false
     }).bind(this))
   }
+  // 定义小狗跑步的动画
+  dogRunAnimation() {
+    let frames = []
+    const EXPLO_IMG_PREFIX  = 'images/dog/'
+    const EXPLO_FRAME_COUNT = 10
+    for ( let i = 0;i < EXPLO_FRAME_COUNT;i++ ) {
+      frames.push(EXPLO_IMG_PREFIX + (i + 1) + '.png')
+    }
+    this.initFrames(frames)
+  }
+
 
   /**
    * 玩家射击操作
