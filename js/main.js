@@ -32,10 +32,12 @@ export default class Main {
     this.player   = new Player(ctx)
     this.gameinfo = new GameInfo()
     this.music    = new Music()
-    this.talkbox  = new TalkBox('r')
+    // this.talkbox  = new TalkBox('r')
     this.bindLoop     = this.loop.bind(this)
     this.hasEventBind = false
-
+    this.talkboxL = new TalkBox('l')
+    this.talkboxR = new TalkBox('r')
+    
     this.player.playAnimation(0,true);
 
     // 清除上一局的动画
@@ -61,6 +63,15 @@ export default class Main {
       enemy.init(6)
       databus.enemys.push(enemy)
     }
+  }
+
+  // 生成对话框背景
+  enemyTalkBox() {
+    this.talkboxL = new TalkBox('l')
+    this.talkboxR = new TalkBox('r')
+
+    // databus.talkboxs.push([talkboxL, talkboxR])
+
   }
 
   // 全局碰撞检测
@@ -91,7 +102,8 @@ export default class Main {
       if ( this.player.isCollideWith(enemy) ) {
         databus.gameOver = true
         console.log('对话框');
-        this.talkbox.visible = true
+        // databus.talkboxs[0].visible = true
+        this.talkboxL.visible = true
         break
       }
     }
@@ -118,16 +130,16 @@ export default class Main {
    * 每一帧重新绘制所有的需要展示的元素
    */
   render() {
-    console.log(this.talkbox.visible);
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 
     this.bg.render(ctx)
-    this.talkbox.drawToCanvas(ctx)
+    // this.talkbox.drawToCanvas(ctx)
 
 
     databus.bullets
           .concat(databus.enemys)
           .forEach((item) => {
+            console.log('item', item)
               item.drawToCanvas(ctx)
             })
 
@@ -139,7 +151,21 @@ export default class Main {
       }
     })
 
+    if(this.talkboxL.visible) {
+      this.talkboxL.drawToCanvas(ctx)
+    }
 
+    if (this.talkboxR.visible) {
+      this.talkboxR.drawToCanvas(ctx)
+    }
+
+    // databus.talkboxs.forEach((talkbox) => {
+    //   if(talkbox.visible) {
+    //     console.log(talkbox);
+    //     talkbox.drawToCanvas(ctx)
+
+    //   }
+    // })
 
     // this.gameinfo.renderGameScore(ctx, databus.score)
 
@@ -169,7 +195,7 @@ export default class Main {
             })
 
     this.enemyGenerate()
-
+    // this.enemyTalkBox()
     this.collisionDetection()
 
     if ( databus.frame % 20 === 0 ) {

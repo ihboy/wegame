@@ -6,7 +6,7 @@ const screenHeight = window.innerHeight
 const TALK_BOX_IMG_SRC_01 = 'images/talkbox01.png'
 const TALK_BOX_IMG_SRC_02   = 'images/talkbox02.png'
 const TALK_BOX_WIDTH     = 150
-const TALK_BOX_HEIGHT    = 100
+const TALK_BOX_HEIGHT    = 120
 
 /**
  * 游戏背景类
@@ -14,8 +14,15 @@ const TALK_BOX_HEIGHT    = 100
  */
 export default class TalkBox extends Sprite {
   constructor(type) {
-    let img_src = type == 'l' ? TALK_BOX_IMG_SRC_01 : TALK_BOX_IMG_SRC_02
-    super(img_src, TALK_BOX_WIDTH, TALK_BOX_HEIGHT)
+    console.log('@@@@')
+    // super(TALK_BOX_IMG_SRC_01, TALK_BOX_WIDTH, TALK_BOX_HEIGHT)
+
+
+    let img_src = type == 'l' ? TALK_BOX_IMG_SRC_02 : TALK_BOX_IMG_SRC_02
+    let sY = screenHeight - 230
+    let sX = 70
+    super(img_src, TALK_BOX_WIDTH, TALK_BOX_HEIGHT, sX, sY)
+    
     this.visible = false
   }
 
