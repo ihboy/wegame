@@ -2,7 +2,10 @@
  * 游戏基础的精灵类
  */
 export default class Sprite {
-  constructor(imgSrc = '', width=  0, height = 0, x = 0, y = 0) {
+  constructor(imgSrc = '', width = 0, height = 0, x = 0, y = 0, sx = 0, sy = 0, sw = 0, sh = 0) {
+
+    // console.log(imgSrc,width,height);
+
     this.img     = new Image()
     this.img.src = imgSrc
 
@@ -11,6 +14,11 @@ export default class Sprite {
 
     this.x = x
     this.y = y
+
+    this.sx = sx
+    this.sy = sy
+    this.sw = width
+    this.sh = sh
 
     this.visible = true
   }
@@ -21,7 +29,7 @@ export default class Sprite {
   drawToCanvas(ctx) {
     if ( !this.visible )
       return
-
+    
     ctx.drawImage(
       this.img,
       this.x,
@@ -39,12 +47,12 @@ export default class Sprite {
   isCollideWith(sp) {
     let spX = sp.x + sp.width / 2
     let spY = sp.y + sp.height / 2
-
-    if ( !this.visible || !sp.visible )
+    // if (!this.visible || !sp.visible)
+    if ( !sp.visible )
       return false
 
     return !!(   spX >= this.x
-              && spX <= this.x + this.width
+              && spX <= this.x + this.width + 30
               && spY >= this.y
               && spY <= this.y + this.height  )
   }

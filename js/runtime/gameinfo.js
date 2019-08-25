@@ -28,24 +28,24 @@ export default class GameInfo {
       screenHeight / 2 - 100 + 50
     )
 
-    ctx.fillText(
-      '得分: ' + score,
-      screenWidth / 2 - 40,
-      screenHeight / 2 - 100 + 130
-    )
+    // ctx.fillText(
+    //   '得分: ' + score,
+    //   screenWidth / 2 - 40,
+    //   screenHeight / 2 - 100 + 130
+    // )
 
     ctx.drawImage(
       atlas,
       120, 6, 39, 24,
       screenWidth / 2 - 60,
-      screenHeight / 2 - 100 + 180,
+      screenHeight / 2 - 100 + 150,
       120, 40
     )
 
     ctx.fillText(
       '重新开始',
       screenWidth / 2 - 40,
-      screenHeight / 2 - 100 + 205
+      screenHeight / 2 - 100 + 175
     )
 
     /**

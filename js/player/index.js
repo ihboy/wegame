@@ -1,32 +1,37 @@
 import Sprite   from '../base/sprite'
 import Bullet   from './bullet'
 import DataBus  from '../databus'
-
+import Animation from '../base/animation'
 const screenWidth    = window.innerWidth
 const screenHeight   = window.innerHeight
 
 // 玩家相关常量设置
-const PLAYER_IMG_SRC = 'images/hero.png'
+const PLAYER_IMG_SRC = 'images/dog/5.png'
+// const PLAYER_IMG_SRC = 'images/hero.gif'
 const PLAYER_WIDTH   = 80
 const PLAYER_HEIGHT  = 80
 
 let databus = new DataBus()
 
-export default class Player extends Sprite {
+export default class Player extends Animation {
   constructor() {
     super(PLAYER_IMG_SRC, PLAYER_WIDTH, PLAYER_HEIGHT)
 
     // 玩家默认处于屏幕底部居中位置
     this.x = screenWidth / 2 - this.width / 2
-    this.y = screenHeight - this.height - 30
+    this.y = screenHeight - this.height - 20
 
     // 用于在手指移动的时候标识手指是否已经在飞机上了
     this.touched = false
 
     this.bullets = []
 
-    // 初始化事件监听
+    this.dogRunAnimation()
+      // 初始化事件监听
     this.initEvent()
+
+    this.visible = true
+
   }
 
   /**
@@ -107,20 +112,35 @@ export default class Player extends Sprite {
       this.touched = false
     }).bind(this))
   }
+  // 定义小狗跑步的动画
+  dogRunAnimation() {
+
+    let frames = []
+    const EXPLO_IMG_PREFIX  = 'images/dog/'
+    const EXPLO_FRAME_COUNT = 10
+    for ( let i = 0;i < EXPLO_FRAME_COUNT;i++ ) {
+      frames.push(EXPLO_IMG_PREFIX + (i + 1) + '.png')
+        console.log("dogs");
+    }
+    this.initFrames(frames)
+  }
+
 
   /**
    * 玩家射击操作
    * 射击时机由外部决定
    */
   shoot() {
-    let bullet = databus.pool.getItemByClass('bullet', Bullet)
 
-    bullet.init(
-      this.x + this.width / 2 - bullet.width / 2,
-      this.y - 10,
-      10
-    )
 
-    databus.bullets.push(bullet)
+    // let bullet = databus.pool.getItemByClass('bullet', Bullet)
+    //
+    // bullet.init(
+    //   this.x + this.width / 2 - bullet.width / 2,
+    //   this.y - 10,
+    //   10
+    // )
+    //
+    // databus.bullets.push(bullet)
   }
 }
