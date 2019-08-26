@@ -5,8 +5,8 @@ const screenHeight = window.innerHeight
 
 const TALK_BOX_IMG_SRC_01 = 'images/talkbox01.png'
 const TALK_BOX_IMG_SRC_02   = 'images/talkbox02.png'
-const TALK_BOX_WIDTH     = 150
-const TALK_BOX_HEIGHT    = 120
+const TALK_BOX_WIDTH     = 100
+const TALK_BOX_HEIGHT    = 80
 
 /**
  * 游戏背景类
@@ -16,8 +16,8 @@ export default class TalkBox extends Sprite {
   constructor(type) {
     // super(TALK_BOX_IMG_SRC_01, TALK_BOX_WIDTH, TALK_BOX_HEIGHT)
     let img_src = type == 'l' ? TALK_BOX_IMG_SRC_01 : TALK_BOX_IMG_SRC_02
-    let sY = screenHeight - 250
-    let sX = type == 'l' ? 0 : 150
+    let sY = screenHeight - 200
+    let sX = type == 'l' ? 100 : 200
     super(img_src, TALK_BOX_WIDTH, TALK_BOX_HEIGHT, sX, sY)
     this.type = type
     
@@ -26,12 +26,12 @@ export default class TalkBox extends Sprite {
    
   renderTalkBoxContent(ctx, text) {
     ctx.fillStyle = "#000"
-    ctx.font = "18px Arial"
+    ctx.font = "16px Arial"
 
     ctx.fillText(
       text,
-      this.type == 'l' ? 30 : 180,
-      screenHeight - 200
+      this.type == 'l' ? 120 : 230,
+      screenHeight - 160
     )
 
   }

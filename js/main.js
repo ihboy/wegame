@@ -40,7 +40,7 @@ export default class Main {
     this.talkboxR = new TalkBox('r')
     this.talkboxFrame = 0
     
-    this.talkboxContentArr = ['你好', '猜猜我是谁', '马蹄金?', '恭喜你,答对了']
+    this.talkboxContentArr = ['咦,宝箱', '有什么?', '马蹄金?', '答对了']
     
 
     this.player.playAnimation(0,true);
