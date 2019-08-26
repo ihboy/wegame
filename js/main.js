@@ -25,7 +25,7 @@ export default class Main {
 
     canvas.removeEventListener(
       'touchstart',
-      this.touchHandler
+      this.clickHandler
     )
 
     this.bg       = new BackGround(ctx)
@@ -35,9 +35,14 @@ export default class Main {
     // this.talkbox  = new TalkBox('r')
     this.bindLoop     = this.loop.bind(this)
     this.hasEventBind = false
+    this.hasClickBind = false
     this.talkboxL = new TalkBox('l')
     this.talkboxR = new TalkBox('r')
+    this.talkboxFrame = 0
     
+    this.talkboxContentArr = ['你好', '猜猜我是谁', '马蹄金?', '恭喜你,答对了']
+    
+
     this.player.playAnimation(0,true);
 
     // 清除上一局的动画
@@ -103,26 +108,37 @@ export default class Main {
         databus.gameOver = true
         console.log('对话框');
         // databus.talkboxs[0].visible = true
-        this.talkboxL.visible = true
+        // this.talkboxL.visible = true
+        this.talkboxFrame = 1
         break
       }
     }
   }
 
   // 游戏结束后的触摸事件处理逻辑
-  touchEventHandler(e) {
-     e.preventDefault()
+  // touchEventHandler(e) {
+  //    e.preventDefault()
 
-    let x = e.touches[0].clientX
-    let y = e.touches[0].clientY
+  //   let x = e.touches[0].clientX
+  //   let y = e.touches[0].clientY
 
-    let area = this.gameinfo.btnArea
+  //   let area = this.gameinfo.btnArea
 
-    if (   x >= area.startX
-        && x <= area.endX
-        && y >= area.startY
-        && y <= area.endY  )
+  //   if (   x >= area.startX
+  //       && x <= area.endX
+  //       && y >= area.startY
+  //       && y <= area.endY  )
+  //     this.restart()
+  // }
+
+  addClickHandler(e) {
+    if (this.talkboxFrame >= 4) {
       this.restart()
+      return
+    }
+    if(this.talkboxL.visible || this.talkboxR.visible) {
+      this.talkboxFrame++
+    }
   }
 
   /**
@@ -139,7 +155,6 @@ export default class Main {
     databus.bullets
           .concat(databus.enemys)
           .forEach((item) => {
-            console.log('item', item)
               item.drawToCanvas(ctx)
             })
 
@@ -151,33 +166,42 @@ export default class Main {
       }
     })
 
-    if(this.talkboxL.visible) {
-      this.talkboxL.drawToCanvas(ctx)
+    if(this.talkboxFrame) {
+
+      if(this.talkboxFrame % 2 == 0) {
+        this.talkboxR.drawToCanvas(ctx)
+        this.talkboxR.renderTalkBoxContent(ctx, this.talkboxContentArr[this.talkboxFrame-1])
+      }else {
+        this.talkboxL.drawToCanvas(ctx)
+        this.talkboxL.renderTalkBoxContent(ctx, this.talkboxContentArr[this.talkboxFrame - 1])
+      }
+
     }
-
-    if (this.talkboxR.visible) {
-      this.talkboxR.drawToCanvas(ctx)
-    }
-
-    // databus.talkboxs.forEach((talkbox) => {
-    //   if(talkbox.visible) {
-    //     console.log(talkbox);
-    //     talkbox.drawToCanvas(ctx)
-
-    //   }
-    // })
 
     // this.gameinfo.renderGameScore(ctx, databus.score)
+
 
     // 游戏结束停止帧循环
     if ( databus.gameOver ) {
       // this.gameinfo.renderGameOver(ctx, databus.score)
 
-      if ( !this.hasEventBind ) {
-        this.hasEventBind = true
-        this.touchHandler = this.touchEventHandler.bind(this)
-        canvas.addEventListener('touchstart', this.touchHandler)
+
+
+      // if ( !this.hasEventBind ) {
+      //   this.hasEventBind = true
+      //   this.touchHandler = this.touchEventHandler.bind(this)
+      //   canvas.addEventListener('touchstart', this.touchHandler)
+      // }
+
+      if (!this.hasClickBind) {
+        this.hasClickBind = true
+        this.clickHandler = this.addClickHandler.bind(this)
+        
+        canvas.addEventListener('touchstart', this.clickHandler, false)
+
       }
+    }else {
+ 
     }
   }
 
