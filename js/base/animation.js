@@ -17,6 +17,10 @@ export default class Animation extends Sprite {
     // 当前动画是否播放中
     this.isPlaying = false
 
+
+
+
+
     // 动画是否需要循环播放
     this.loop = false
 
