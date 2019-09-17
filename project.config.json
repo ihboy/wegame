@@ -1,5 +1,5 @@
 {
-	"description": "项目配置文件。",
+	"description": "项目配置文件",
 	"setting": {
 		"urlCheck": false,
 		"es6": true,
@@ -8,7 +8,7 @@
 		"newFeature": true
 	},
 	"compileType": "game",
-	"libVersion": "game",
+	"libVersion": "2.8.1",
 	"appid": "wx6ac3f5090a6b99c5",
 	"projectname": "wx_game",
 	"isGameTourist": true,
