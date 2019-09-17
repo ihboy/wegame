@@ -17,8 +17,30 @@ export default class Main {
   constructor() {
     // 维护当前requestAnimationFrame的id
     this.aniId    = 0
-
+    this.userLogin()
     this.restart()
+  }
+
+
+  userLogin(){
+    wx.login({
+      success (res) {
+        if (res.code) {
+          console.log(res.code);
+          HttpService.login({
+            data : { code : res.code},
+            successFun(){
+              console.log("success");
+            },
+            failFun(){
+              console.log("fail");
+            }
+          })
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
+      }
+    })
   }
 
   restart() {

@@ -1,15 +1,15 @@
-const httpName = "http://192.168.1.1.1";
+const httpName = "http://leason.club:8082";
 export default {
-
-
-    name1(){
+    login(obj){
         wx.request({
-            url: url,
-            data:data,
-
+            url: httpName + "/api/remote/login",
+            data:obj.data,
+            method:'GET',
+            success : obj.successFun,
+            fail : obj.failFun,
         })
     },
-    name2(){
+    getAll(){
 
     }
 }
