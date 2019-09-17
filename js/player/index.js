@@ -120,7 +120,6 @@ export default class Player extends Animation {
     const EXPLO_FRAME_COUNT = 10
     for ( let i = 0;i < EXPLO_FRAME_COUNT;i++ ) {
       frames.push(EXPLO_IMG_PREFIX + (i + 1) + '.png')
-        console.log("dogs");
     }
     this.initFrames(frames)
   }

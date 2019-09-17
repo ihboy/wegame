@@ -100,12 +100,12 @@ export default class Animation extends Sprite {
 
     if ( this.index > this.count - 1 ) {
       if ( this.loop ) {
-        console.log(2222222)
+        // console.log(2222222)
         this.index = 0
       }
 
       else {
-          console.log(222222)
+          // console.log(222222)
 
           this.index--
         this.stop()

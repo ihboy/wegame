@@ -14,7 +14,6 @@ const TALK_BOX_HEIGHT    = 120
  */
 export default class TalkBox extends Sprite {
   constructor(type) {
-    console.log('@@@@')
     // super(TALK_BOX_IMG_SRC_01, TALK_BOX_WIDTH, TALK_BOX_HEIGHT)
 
 

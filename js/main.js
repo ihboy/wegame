@@ -5,6 +5,7 @@ import GameInfo   from './runtime/gameinfo'
 import Music      from './runtime/music'
 import DataBus    from './databus'
 import TalkBox    from './runtime/talkbox'
+import HttpService from './service/httpService'
 
 let ctx   = canvas.getContext('2d')
 let databus = new DataBus()
@@ -56,7 +57,7 @@ export default class Main {
   enemyGenerate() {
     if ( databus.frame % 300 === 0 ) {
 
-      console.log("refresh emeny")
+      // console.log("refresh emeny")
 
       databus.enemys = [];
       let enemy = databus.pool.getItemByClass('enemy', Enemy)
@@ -101,7 +102,7 @@ export default class Main {
       // this.player.visible = true
       if ( this.player.isCollideWith(enemy) ) {
         databus.gameOver = true
-        console.log('对话框');
+        // console.log('对话框');
         // databus.talkboxs[0].visible = true
         this.talkboxL.visible = true
         break
@@ -139,7 +140,7 @@ export default class Main {
     databus.bullets
           .concat(databus.enemys)
           .forEach((item) => {
-            console.log('item', item)
+            // console.log('item', item)
               item.drawToCanvas(ctx)
             })
 
