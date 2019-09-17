@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b980c420-1d83-475b-9dca-9f5306ce31f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/js/service/httpService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/base/animation.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/base/animation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/player/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/player/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/runtime/talkbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/runtime/talkbox.js" afterDir="false" />
-    </list>
+    <list default="true" id="b980c420-1d83-475b-9dca-9f5306ce31f5" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +102,7 @@
       <workItem from="1567557895821" duration="599000" />
       <workItem from="1567643281408" duration="599000" />
       <workItem from="1568624019454" duration="314000" />
-      <workItem from="1568680373833" duration="2330000" />
+      <workItem from="1568680373833" duration="2658000" />
     </task>
     <task id="LOCAL-00001" summary="some commits~">
       <created>1566311487168</created>
