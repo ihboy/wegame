@@ -16,9 +16,25 @@ let databus = new DataBus()
 export default class Main {
   constructor() {
     // 维护当前requestAnimationFrame的id
+
     this.aniId    = 0
-    this.userLogin()
-    this.restart()
+    this.userLogin();
+    this.restart();
+
+    HttpService.getAll({
+        successFun(res){
+          if(res && res.statusCode == 200){
+              console.log(res);
+          }
+        },
+        failFun(err){
+
+        }
+    })
+
+
+
+
   }
 
 
@@ -26,14 +42,12 @@ export default class Main {
     wx.login({
       success (res) {
         if (res.code) {
-          console.log(res.code);
           HttpService.login({
             data : { code : res.code},
-            successFun(){
-              console.log("success");
+            successFun(res){
             },
-            failFun(){
-              console.log("fail");
+            failFun(err){
+              console.log(err);
             }
           })
         } else {
