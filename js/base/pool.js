@@ -25,13 +25,20 @@ export default class Pool {
    * 根据传入的对象标识符，查询对象池
    * 对象池为空创建新的类，否则从对象池中取
    */
-  getItemByClass(name, className) {
-    let pool = this.getPoolBySign(name)
+  getItemByClass(name, className,obj) {
+    let pool = this.getPoolBySign(name);
 
-    let result = (  pool.length
-                  ? pool.shift()
-                  : new className()  )
-
+      if(obj){
+          console.log(obj);
+          let _r = this.getRandom(obj);
+          var result = (  pool.length
+              ? pool.shift()
+              : new className(obj[_r],_r)  )
+      }else{
+          var result = (  pool.length
+              ? pool.shift()
+              : new className()  )
+      }
     return result
   }
 
@@ -42,4 +49,13 @@ export default class Pool {
   recover(name, instance) {
     this.getPoolBySign(name).push(instance)
   }
+
+/*
+*
+* 随机算法
+*
+* */
+getRandom(arr){
+  return parseInt(arr.length * Math.random())
+}
 }

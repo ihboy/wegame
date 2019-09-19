@@ -7,6 +7,9 @@ import DataBus    from './databus'
 import TalkBox    from './runtime/talkbox'
 import HttpService from './service/httpService'
 
+
+
+
 let ctx   = canvas.getContext('2d')
 let databus = new DataBus()
 
@@ -16,28 +19,23 @@ let databus = new DataBus()
 export default class Main {
   constructor() {
     // 维护当前requestAnimationFrame的id
-
     this.aniId    = 0
     this.userLogin();
     this.restart();
-
+    this.enemyList = new Array();
+    var _this = this;
     HttpService.getAll({
         successFun(res){
+          console.log("道具列表",res);
           if(res && res.statusCode == 200){
-              console.log(res);
+              _this.enemyList = res.data;
           }
         },
         failFun(err){
-
+            console.log(err)
         }
     })
-
-
-
-
   }
-
-
   userLogin(){
     wx.login({
       success (res) {
@@ -96,11 +94,10 @@ export default class Main {
   enemyGenerate() {
     if ( databus.frame % 300 === 0 ) {
 
-      // console.log("refresh emeny")
 
       databus.enemys = [];
-      let enemy = databus.pool.getItemByClass('enemy', Enemy)
-      enemy.init(6)
+      let enemy = databus.pool.getItemByClass('enemy', Enemy, this.enemyList)
+      enemy.init(this.enemyList);
       databus.enemys.push(enemy)
     }
   }

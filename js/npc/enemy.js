@@ -4,6 +4,12 @@ import DataBus   from '../databus'
 const ENEMY_IMG_SRC = 'images/enemy.png'
 const ENEMY_WIDTH   = 60
 const ENEMY_HEIGHT  = 60
+const imgArr = [
+    '1.png',
+    '2.png',
+    '3.png'
+]
+
 
 const __ = {
   speed: Symbol('speed')
@@ -16,19 +22,18 @@ function rnd(start, end){
 }
 
 export default class Enemy extends Animation {
-  constructor() {
-    super(ENEMY_IMG_SRC, ENEMY_WIDTH, ENEMY_HEIGHT)
 
-    // this.initExplosionAnimation()
+  constructor(obj,r) {
+      // let _ENEMY_IMG_SRC = obj.ENEMY_IMG_SRC;
+      console.log(r);
+      var ENEMY_IMG_SRC = "images/enemy/" + imgArr[r];
+      super(ENEMY_IMG_SRC, ENEMY_WIDTH, ENEMY_HEIGHT);
   }
 
-  init(speed) {
-    // this.x = rnd(0, window.innerWidth - ENEMY_WIDTH)
-    // this.y = -this.height
+  init(enemyList) {
     this.x = this.width + window.innerWidth;
     this.y = window.innerHeight - 120;
     this[__.speed] = 6
-
     this.visible = true
   }
 
