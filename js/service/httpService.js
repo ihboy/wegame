@@ -18,8 +18,12 @@ export default {
             url: httpName + "/api/remote/obstacle/all",
             data: null,
             method: 'GET',
-            success: obj.successFun,
-            fail: obj.failFun,
+            success: function (res) {
+                obj.successFun(res)
+            },
+            fail: function (err) {
+                obj.failFun(err)
+            },
         })
     },
     getRandom(obj) {
@@ -27,8 +31,12 @@ export default {
             url: httpName + "/api/remote/obstacle/random",
             data: null,
             method: 'GET',
-            success: obj.successFun,
-            fail: obj.failFun,
+            success: function (res) {
+                obj.successFun(res)
+            },
+            fail: function (err) {
+                obj.failFun(err)
+            },
         })
     },
     setScore(obj) {
@@ -36,8 +44,12 @@ export default {
             url: httpName + "/api/remote/obstacle/score",
             data: obj.data,
             method: 'POST',
-            success: obj.successFun,
-            fail: obj.failFun,
+            success: function (res) {
+                obj.successFun(res)
+            },
+            fail: function (err) {
+                obj.failFun(err)
+            },
         })
     },
     myCenter() {
@@ -45,8 +57,12 @@ export default {
             url: httpName + "/api/remote/me/center",
             data: obj.data,
             method: 'GET',
-            success: obj.successFun,
-            fail: obj.failFun,
+            success: function (res) {
+                obj.successFun(res)
+            },
+            fail: function (err) {
+                obj.failFun(err)
+            },
         })
     }
 }
