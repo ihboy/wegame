@@ -25,6 +25,7 @@ export default class DataBus {
     this.animations = []
     this.talkboxs    = []
     this.gameOver   = false
+    this.gamePause  = false
   }
 
   /**
