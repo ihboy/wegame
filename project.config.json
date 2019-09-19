@@ -10,7 +10,7 @@
 	"compileType": "game",
 	"libVersion": "2.8.1",
 	"appid": "wx65c0610ba52e4846",
-	"projectname": "wx_game",
+	"projectname": "wegame",
 	"isGameTourist": true,
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
