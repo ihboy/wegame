@@ -60,7 +60,7 @@ export default class Main {
 
     canvas.removeEventListener(
       'touchstart',
-      this.touchHandler
+      this.clickHandler
     )
 
     this.bg       = new BackGround(ctx)
@@ -70,8 +70,11 @@ export default class Main {
     // this.talkbox  = new TalkBox('r')
     this.bindLoop     = this.loop.bind(this)
     this.hasEventBind = false
+    this.hasClickBind = false
+    this.talkboxFrame = 0
     this.talkboxL = new TalkBox('l')
     this.talkboxR = new TalkBox('r')
+    this.talkboxContentArr = ['你好', '猜猜我是谁', '马蹄金?', '恭喜你,答对了']
     
     this.player.playAnimation(0,true);
 
@@ -136,8 +139,7 @@ export default class Main {
       if ( this.player.isCollideWith(enemy) ) {
         databus.gameOver = true
         // console.log('对话框');
-        // databus.talkboxs[0].visible = true
-        this.talkboxL.visible = true
+        this.talkboxFrame = 1
         break
       }
     }
@@ -159,6 +161,18 @@ export default class Main {
       this.restart()
   }
 
+  addClickHandler(e) {
+    if (this.talkboxFrame >= 4) {
+      this.restart()
+      return
+    }
+
+
+    if (this.talkboxL.visible || this.talkboxR.visible) {
+      this.talkboxFrame++
+    }
+  }
+
   /**
    * canvas重绘函数
    * 每一帧重新绘制所有的需要展示的元素
@@ -167,8 +181,6 @@ export default class Main {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 
     this.bg.render(ctx)
-    // this.talkbox.drawToCanvas(ctx)
-
 
     databus.bullets
           .concat(databus.enemys)
@@ -185,21 +197,15 @@ export default class Main {
       }
     })
 
-    if(this.talkboxL.visible) {
-      this.talkboxL.drawToCanvas(ctx)
+    if (this.talkboxFrame > 0) {
+      if (this.talkboxFrame % 2 == 0) {
+        this.talkboxR.drawToCanvas(ctx)
+        this.talkboxR.renderTalkBoxContent(ctx, this.talkboxContentArr[this.talkboxFrame - 1])
+      } else {
+        this.talkboxL.drawToCanvas(ctx)
+        this.talkboxL.renderTalkBoxContent(ctx, this.talkboxContentArr[this.talkboxFrame - 1])
+      }
     }
-
-    if (this.talkboxR.visible) {
-      this.talkboxR.drawToCanvas(ctx)
-    }
-
-    // databus.talkboxs.forEach((talkbox) => {
-    //   if(talkbox.visible) {
-    //     console.log(talkbox);
-    //     talkbox.drawToCanvas(ctx)
-
-    //   }
-    // })
 
     // this.gameinfo.renderGameScore(ctx, databus.score)
 
@@ -207,17 +213,25 @@ export default class Main {
     if ( databus.gameOver ) {
       // this.gameinfo.renderGameOver(ctx, databus.score)
 
-      if ( !this.hasEventBind ) {
-        this.hasEventBind = true
-        this.touchHandler = this.touchEventHandler.bind(this)
-        canvas.addEventListener('touchstart', this.touchHandler)
+      // if ( !this.hasEventBind ) {
+      //   this.hasEventBind = true
+      //   this.touchHandler = this.touchEventHandler.bind(this)
+      //   canvas.addEventListener('touchstart', this.touchHandler)
+      // }
+
+      if (!this.hasClickBind) {
+        this.hasClickBind = true
+        this.clickHandler = this.addClickHandler.bind(this)
+
+        canvas.addEventListener('touchstart', this.clickHandler, false)
+
       }
     }
   }
 
   // 游戏逻辑更新主函数
   update() {
-    if ( databus.gameOver )
+    if ( databus.gameOver || databus.gamePause )
       return;
 
     this.bg.update()
