@@ -6,10 +6,7 @@ import Music      from './runtime/music'
 import DataBus    from './databus'
 import TalkBox    from './runtime/talkbox'
 import HttpService from './service/httpService'
-
-
-
-
+import PlayerHead from './runtime/playerhead'
 let ctx   = canvas.getContext('2d')
 let databus = new DataBus()
 
@@ -67,7 +64,11 @@ export default class Main {
     this.player   = new Player(ctx)
     this.gameinfo = new GameInfo()
     this.music    = new Music()
-    // this.talkbox  = new TalkBox('r')
+
+
+      this.playerHead = new PlayerHead();
+
+      // this.talkbox  = new TalkBox('r')
     this.bindLoop     = this.loop.bind(this)
     this.hasEventBind = false
     this.hasClickBind = false
@@ -75,7 +76,7 @@ export default class Main {
     this.talkboxL = new TalkBox('l')
     this.talkboxR = new TalkBox('r')
     this.talkboxContentArr = ['你好', '猜猜我是谁', '马蹄金?', '恭喜你,答对了']
-    
+
     this.player.playAnimation(0,true);
 
     // 清除上一局的动画
@@ -162,14 +163,16 @@ export default class Main {
   }
 
   addClickHandler(e) {
-    if (this.talkboxFrame >= 4) {
-      this.restart()
-      return
-    }
-
-
-    if (this.talkboxL.visible || this.talkboxR.visible) {
-      this.talkboxFrame++
+    if(databus.gameOver){
+        if (this.talkboxFrame >= 4) {
+            this.restart()
+            return
+        }
+        if (this.talkboxL.visible || this.talkboxR.visible) {
+            this.talkboxFrame++
+        }
+    }else{
+        console.log("需要触发个人中心");
     }
   }
 
@@ -181,8 +184,9 @@ export default class Main {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 
     this.bg.render(ctx)
+      this.playerHead.drawToCanvas(ctx);
 
-    databus.bullets
+      databus.bullets
           .concat(databus.enemys)
           .forEach((item) => {
             // console.log('item', item)
@@ -210,7 +214,7 @@ export default class Main {
     // this.gameinfo.renderGameScore(ctx, databus.score)
 
     // 游戏结束停止帧循环
-    if ( databus.gameOver ) {
+    // if ( databus.gameOver ) {
       // this.gameinfo.renderGameOver(ctx, databus.score)
 
       // if ( !this.hasEventBind ) {
@@ -226,7 +230,7 @@ export default class Main {
         canvas.addEventListener('touchstart', this.clickHandler, false)
 
       }
-    }
+    // }
   }
 
   // 游戏逻辑更新主函数
