@@ -1,9 +1,9 @@
 import Sprite from '../base/sprite'
 const screenWidth  = window.innerWidth
 const screenHeight = window.innerHeight
-const HEAD_SRC = 'images/dog/1.png'
-const HEAD_WIDTH     = 60
-const HEAD_HEIGHT    = 60
+const HEAD_SRC = 'images/header.png'
+const HEAD_WIDTH     = 50
+const HEAD_HEIGHT    = 50
 
 /**
  * 游戏背景类
@@ -13,8 +13,8 @@ export default class PlayerHead extends Sprite {
     constructor() {
       console.log("swswssw")
       // super(TALK_BOX_IMG_SRC_01, TALK_BOX_WIDTH, TALK_BOX_HEIGHT)
-      let sY = 30
-      let sX = 30
+      let sY = 10
+      let sX = 10
       super(HEAD_SRC, HEAD_WIDTH, HEAD_HEIGHT, sX, sY)
       // this.visible = true
     
