@@ -6,9 +6,9 @@ import Music      from './runtime/music'
 import DataBus    from './databus'
 import TalkBox    from './runtime/talkbox'
 import HttpService from './service/httpService'
+import PlayerHead from './runtime/playerhead'
 
-
-
+import Personal from './runtime/personal'
 
 let ctx   = canvas.getContext('2d')
 let databus = new DataBus()
@@ -67,15 +67,20 @@ export default class Main {
     this.player   = new Player(ctx)
     this.gameinfo = new GameInfo()
     this.music    = new Music()
-    // this.talkbox  = new TalkBox('r')
+
+
+      this.playerHead = new PlayerHead();
+
+      // this.talkbox  = new TalkBox('r')
     this.bindLoop     = this.loop.bind(this)
     this.hasEventBind = false
     this.hasClickBind = false
+    this.personal = new Personal(ctx)
     this.talkboxFrame = 0
     this.talkboxL = new TalkBox('l')
     this.talkboxR = new TalkBox('r')
     this.talkboxContentArr = ['你好', '猜猜我是谁', '马蹄金?', '恭喜你,答对了']
-    
+
     this.player.playAnimation(0,true);
 
     // 清除上一局的动画
@@ -140,6 +145,7 @@ export default class Main {
         databus.gameOver = true
         // console.log('对话框');
         this.talkboxFrame = 1
+        this.personal.visible = false
         break
       }
     }
@@ -162,31 +168,42 @@ export default class Main {
   }
 
   addClickHandler(e) {
-
     e.preventDefault()
 
-    let x = e.touches[0].clientX
-    let y = e.touches[0].clientY
-
-    //显示玩家中心
-    let area = this.personal.btnArea;
-
-    if(x >= area.startX
-      && x <= area.endX
-      && y >= area.startY
-      && y <= area.endY)
-      this.personal.visible = true
-
-
     //对话框切换显示
-    if (this.talkboxFrame >= 4) {
-      this.restart()
-      return
-    }
+    if(databus.gameOver){
+      if (this.talkboxFrame >= 4) {
+          this.restart()
+          return
+      }
+      if (this.talkboxL.visible || this.talkboxR.visible) {
+          this.talkboxFrame++
+      }
+    }else{
+      // console.log("需要触发个人中心");
+      
+      let x = e.touches[0].clientX
+      let y = e.touches[0].clientY
+
+      //显示玩家中心
+      let area = this.playerHead.btnArea;
+      let closeBtn = this.personal.closeBtn;
+
+      console.log(x, y, '777777');
+      if (x >= area.startX && x <= area.endX && y >= area.startY && y <= area.endY){
+        this.personal.visible = true
+        console.log('显示个人中心------')
+
+      }
+
+      if (this.personal.visible && x >= closeBtn.startX && x <= closeBtn.endX && y >= closeBtn.startY && y <= closeBtn.endY) {
+
+        this.personal.visible = false
+        console.log('关闭个人中心------')
+
+      }
 
 
-    if (this.talkboxL.visible || this.talkboxR.visible) {
-      this.talkboxFrame++
     }
   }
 
@@ -198,8 +215,9 @@ export default class Main {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 
     this.bg.render(ctx)
+    this.playerHead.drawToCanvas(ctx)
 
-    databus.bullets
+      databus.bullets
           .concat(databus.enemys)
           .forEach((item) => {
             // console.log('item', item)
@@ -214,6 +232,10 @@ export default class Main {
       }
     })
 
+    if (this.personal.visible) {
+      this.personal.drawToCanvas(ctx)
+    }
+    
     if (this.talkboxFrame > 0) {
       if (this.talkboxFrame % 2 == 0) {
         this.talkboxR.drawToCanvas(ctx)
@@ -227,7 +249,7 @@ export default class Main {
     // this.gameinfo.renderGameScore(ctx, databus.score)
 
     // 游戏结束停止帧循环
-    if ( databus.gameOver ) {
+    // if ( databus.gameOver ) {
       // this.gameinfo.renderGameOver(ctx, databus.score)
 
       // if ( !this.hasEventBind ) {
@@ -243,7 +265,7 @@ export default class Main {
         canvas.addEventListener('touchstart', this.clickHandler, false)
 
       }
-    }
+    // }
   }
 
   // 游戏逻辑更新主函数

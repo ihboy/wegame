@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b980c420-1d83-475b-9dca-9f5306ce31f5" name="Default Changelist" comment="Default Changelist">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/enemy/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/enemy/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/enemy/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/enemy/4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/enemy/5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/enemy/6.png" />
+    <list default="true" id="b980c420-1d83-475b-9dca-9f5306ce31f5" name="Default Changelist" comment="darre commission">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/runtime/playerhead.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/base/pool.js" afterPath="$PROJECT_DIR$/js/base/pool.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/npc/enemy.js" afterPath="$PROJECT_DIR$/js/npc/enemy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/service/httpService.js" afterPath="$PROJECT_DIR$/js/service/httpService.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,8 +18,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="541">
+              <caret line="174" column="32" lean-forward="false" selection-start-line="174" selection-start-column="32" selection-end-line="174" selection-end-column="32" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -35,13 +27,111 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="enemy.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/npc/enemy.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="41" lean-forward="true" selection-start-line="0" selection-start-column="41" selection-end-line="0" selection-end-column="41" />
+              <folding>
+                <marker date="1568899222434" expanded="true" signature="78:118" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="talkbox.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/runtime/talkbox.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="520">
+              <caret line="26" column="22" lean-forward="false" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="playerhead.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/runtime/playerhead.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gameinfo.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/runtime/gameinfo.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-515">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/player/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2520">
+              <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sprite.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/base/sprite.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-117">
+              <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="background.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/runtime/background.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bullet.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/player/bullet.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>Enemy</find>
       <find>constructor</find>
       <find>enemy</find>
+      <find>talkboxR</find>
+      <find>BackGround</find>
+      <find>bg</find>
+      <find>renderTalkBoxContent</find>
+      <find>click</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -53,6 +143,7 @@
         <option value="$PROJECT_DIR$/js/service/httpService.js" />
         <option value="$PROJECT_DIR$/js/base/pool.js" />
         <option value="$PROJECT_DIR$/js/npc/enemy.js" />
+        <option value="$PROJECT_DIR$/js/runtime/playerhead.js" />
         <option value="$PROJECT_DIR$/js/main.js" />
       </list>
     </option>
@@ -123,11 +214,6 @@
             <path>
               <item name="wegame" type="b2602c69:ProjectViewProjectNode" />
               <item name="wegame" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wegame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wegame" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -141,6 +227,12 @@
               <item name="wegame" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="player" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wegame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wegame" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="runtime" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -229,11 +321,18 @@
       <option name="project" value="LOCAL" />
       <updated>1568819184594</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="darre commission">
+      <created>1568904485221</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1568904485221</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7930000" />
+    <option name="totallyTimeSpent" value="10859000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="984" extended-state="0" />
@@ -242,6 +341,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295838" sideWeight="0.5021097" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -259,7 +359,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295838" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24954791" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -282,35 +381,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="some commits~" />
     <MESSAGE value="Default Changelist" />
-    <option name="LAST_COMMIT_MESSAGE" value="Default Changelist" />
+    <MESSAGE value="darre commission" />
+    <option name="LAST_COMMIT_MESSAGE" value="darre commission" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/runtime/background.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-          <folding>
-            <marker date="1566392788892" expanded="true" signature="324:413" ph="{...}" />
-            <marker date="1566392788892" expanded="true" signature="426:508" ph="{...}" />
-            <marker date="1566392788892" expanded="true" signature="637:1013" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1140">
@@ -344,11 +422,6 @@
           <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="123" selection-end-column="35" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
-            <marker date="1568729494644" expanded="true" signature="456:2990" ph="{...}" />
-            <marker date="1568729494644" expanded="true" signature="2455:2697" ph="{...}" />
-            <marker date="1568729494644" expanded="true" signature="2702:2738" ph="/** 玩家射击操作 ...*/" />
-            <marker date="1568729494644" expanded="true" signature="2749:2988" ph="{...}" />
-            <marker date="1568729494644" expanded="true" signature="2757:2984" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -409,11 +482,6 @@
           <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
-            <marker date="1568729494644" expanded="true" signature="456:2990" ph="{...}" />
-            <marker date="1568729494644" expanded="true" signature="2455:2697" ph="{...}" />
-            <marker date="1568729494644" expanded="true" signature="2702:2738" ph="/** 玩家射击操作 ...*/" />
-            <marker date="1568729494644" expanded="true" signature="2749:2988" ph="{...}" />
-            <marker date="1568729494644" expanded="true" signature="2757:2984" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -429,11 +497,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-          <folding>
-            <marker date="1566392788892" expanded="true" signature="324:413" ph="{...}" />
-            <marker date="1566392788892" expanded="true" signature="426:508" ph="{...}" />
-            <marker date="1566392788892" expanded="true" signature="637:1013" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -486,11 +550,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-          <folding>
-            <marker date="1566392788892" expanded="true" signature="324:413" ph="{...}" />
-            <marker date="1566392788892" expanded="true" signature="426:508" ph="{...}" />
-            <marker date="1566392788892" expanded="true" signature="637:1013" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -527,11 +587,6 @@
           <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="123" selection-end-column="35" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
-            <marker date="1568729494644" expanded="true" signature="456:2990" ph="{...}" />
-            <marker date="1568729494644" expanded="true" signature="2455:2697" ph="{...}" />
-            <marker date="1568729494644" expanded="true" signature="2702:2738" ph="/** 玩家射击操作 ...*/" />
-            <marker date="1568729494644" expanded="true" signature="2749:2988" ph="{...}" />
-            <marker date="1568729494644" expanded="true" signature="2757:2984" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -555,18 +610,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/runtime/background.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-          <folding>
-            <marker date="1566392788892" expanded="true" signature="324:413" ph="{...}" />
-            <marker date="1566392788892" expanded="true" signature="426:508" ph="{...}" />
-            <marker date="1566392788892" expanded="true" signature="637:1013" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/images/png.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -580,24 +623,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/runtime/gameinfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/player/bullet.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/game.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -608,31 +633,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/player/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2480">
-          <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-            <marker date="1568729494644" expanded="true" signature="456:2990" ph="{...}" />
-            <marker date="1568729494644" expanded="true" signature="2455:2697" ph="{...}" />
-            <marker date="1568729494644" expanded="true" signature="2702:2738" ph="/** 玩家射击操作 ...*/" />
-            <marker date="1568729494644" expanded="true" signature="2749:2988" ph="{...}" />
-            <marker date="1568729494644" expanded="true" signature="2757:2984" ph="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/images/explosion4.png" />
     <entry file="file://$PROJECT_DIR$/images/explosion3.png" />
     <entry file="file://$PROJECT_DIR$/images/explosion2.png" />
     <entry file="file://$PROJECT_DIR$/images/explosion1.png" />
     <entry file="file://$PROJECT_DIR$/images/dog/2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/dog/1.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -658,14 +663,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/base/sprite.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="28" column="14" lean-forward="false" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/images/enemy.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -684,17 +681,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/npc/enemy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="28" column="52" lean-forward="false" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <marker date="1568899222434" expanded="true" signature="78:118" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/base/pool.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
@@ -703,10 +689,85 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/images/dog/1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/player/bullet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/player/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2520">
+          <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/runtime/background.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/base/sprite.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-117">
+          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/runtime/gameinfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-515">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/runtime/talkbox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="26" column="22" lean-forward="false" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/npc/enemy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="41" lean-forward="true" selection-start-line="0" selection-start-column="41" selection-end-line="0" selection-end-column="41" />
+          <folding>
+            <marker date="1568899222434" expanded="true" signature="78:118" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/runtime/playerhead.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="541">
+          <caret line="174" column="32" lean-forward="false" selection-start-line="174" selection-start-column="32" selection-end-line="174" selection-end-column="32" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
