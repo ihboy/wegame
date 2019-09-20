@@ -162,6 +162,23 @@ export default class Main {
   }
 
   addClickHandler(e) {
+
+    e.preventDefault()
+
+    let x = e.touches[0].clientX
+    let y = e.touches[0].clientY
+
+    //显示玩家中心
+    let area = this.personal.btnArea;
+
+    if(x >= area.startX
+      && x <= area.endX
+      && y >= area.startY
+      && y <= area.endY)
+      this.personal.visible = true
+
+
+    //对话框切换显示
     if (this.talkboxFrame >= 4) {
       this.restart()
       return
