@@ -1,6 +1,7 @@
 import Player     from './player/index'
 import Enemy      from './npc/enemy'
 import BackGround from './runtime/background'
+import Box from './runtime/box'
 import GameInfo   from './runtime/gameinfo'
 import Music      from './runtime/music'
 import DataBus    from './databus'
@@ -70,11 +71,8 @@ export default class Main {
     this.player   = new Player(ctx)
     this.gameinfo = new GameInfo()
     this.music    = new Music()
-
-
-      this.playerHead = new PlayerHead();
-
-      // this.talkbox  = new TalkBox('r')
+    this.playerHead = new PlayerHead()
+    this.box      =  new Box()
     this.bindLoop     = this.loop.bind(this)
     this.hasEventBind = false
     this.hasClickBind = false
@@ -112,13 +110,16 @@ export default class Main {
     }
   }
 
+  // 生成获取的资源
+  boxGenerate() {
+
+
+  }
+
   // 生成对话框背景
   enemyTalkBox() {
     this.talkboxL = new TalkBox('l')
     this.talkboxR = new TalkBox('r')
-
-    // databus.talkboxs.push([talkboxL, talkboxR])
-
   }
 
   // 全局碰撞检测
@@ -272,6 +273,7 @@ export default class Main {
     if (this.personal.visible) {
       this.personal.drawToCanvas(ctx)
       this.personal.fillContent(ctx)
+      this.box.drawToCanvas(ctx)
     }
     
     if (this.talkboxFrame > 0) {
