@@ -6,7 +6,7 @@ const screenWidth    = window.innerWidth
 const screenHeight   = window.innerHeight
 
 // 玩家相关常量设置
-const PLAYER_IMG_SRC = 'images/dog/5.png'
+const PLAYER_IMG_SRC = 'images/dog/10.png'
 // const PLAYER_IMG_SRC = 'images/hero.gif'
 const PLAYER_WIDTH   = 80
 const PLAYER_HEIGHT  = 80
@@ -18,7 +18,7 @@ export default class Player extends Animation {
     super(PLAYER_IMG_SRC, PLAYER_WIDTH, PLAYER_HEIGHT)
 
     // 玩家默认处于屏幕底部居中位置
-    this.x = screenWidth / 2 - this.width
+    this.x = screenWidth / 2 - this.width- 80
     this.y = screenHeight - this.height - 50
 
     // 用于在手指移动的时候标识手指是否已经在飞机上了
@@ -80,37 +80,37 @@ export default class Player extends Animation {
    * 改变战机的位置
    */
   initEvent() {
-    canvas.addEventListener('touchstart', ((e) => {
-      e.preventDefault()
-
-      let x = e.touches[0].clientX
-      let y = e.touches[0].clientY
-
-      //
-      if ( this.checkIsFingerOnAir(x, y) ) {
-        this.touched = true
-
-        this.setAirPosAcrossFingerPosZ(x, y)
-      }
-
-    }).bind(this))
-
-    canvas.addEventListener('touchmove', ((e) => {
-      e.preventDefault()
-
-      let x = e.touches[0].clientX
-      let y = e.touches[0].clientY
-
-      if ( this.touched )
-        this.setAirPosAcrossFingerPosZ(x, y)
-
-    }).bind(this))
-
-    canvas.addEventListener('touchend', ((e) => {
-      e.preventDefault()
-
-      this.touched = false
-    }).bind(this))
+    // canvas.addEventListener('touchstart', ((e) => {
+    //   e.preventDefault()
+    //
+    //   let x = e.touches[0].clientX
+    //   let y = e.touches[0].clientY
+    //
+    //   //
+    //   if ( this.checkIsFingerOnAir(x, y) ) {
+    //     this.touched = true
+    //
+    //     this.setAirPosAcrossFingerPosZ(x, y)
+    //   }
+    //
+    // }).bind(this))
+    //
+    // canvas.addEventListener('touchmove', ((e) => {
+    //   e.preventDefault()
+    //
+    //   let x = e.touches[0].clientX
+    //   let y = e.touches[0].clientY
+    //
+    //   if ( this.touched )
+    //     this.setAirPosAcrossFingerPosZ(x, y)
+    //
+    // }).bind(this))
+    //
+    // canvas.addEventListener('touchend', ((e) => {
+    //   e.preventDefault()
+    //
+    //   this.touched = false
+    // }).bind(this))
   }
   // 定义小狗跑步的动画
   dogRunAnimation() {

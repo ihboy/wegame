@@ -37,12 +37,15 @@ export default class Main {
     })
   }
   userLogin(){
+    var that = this;
     wx.login({
       success (res) {
         if (res.code) {
           HttpService.login({
             data : { code : res.code},
             successFun(res){
+              console.log(res);
+              that.userid = res.data.data.userid;
             },
             failFun(err){
               console.log(err);
@@ -106,8 +109,6 @@ export default class Main {
       enemy.init();
       databus.enemys.push(enemy)
       this.round =   enemy.round;
-
-      console.log(this.enemyList[this.round],"为即将碰撞项");
     }
   }
 
@@ -139,14 +140,37 @@ export default class Main {
     //     }
     //   }
     // })
-
     for ( let i = 0, il = databus.enemys.length; i < il;i++ ) {
-      let enemy = databus.enemys[i]
+        let enemy = databus.enemys[i]
       // console.log('人物位置：', this.player.x, this.player.y);
       // console.log('宝箱位置：', enemy.x, enemy.y);
       // this.player.visible = true
       if ( this.player.isCollideWith(enemy) ) {
-        databus.gameOver = true
+          var _obj =   this.enemyList[this.round];
+          console.log("当前碰撞对象为",_obj);
+
+          HttpService.setScore({
+              data:{
+                  "obsid":_obj.properties.id,//障碍物id
+                  "obsName":_obj.properties.name,//障碍物名称
+                  "userid": that.userid,//用户系统id
+                  "socre": _obj.properties.score//得分--障碍物重量
+              },
+              successFun:ret=>{
+
+              },
+              failFun:ret=>{
+
+              },
+          })
+          // this.player.stop();
+          // this.visible = false;
+          // this.isPlaying = true
+          this.player.stop();
+          this.player.visible = false;
+          this.player = null;
+          this.player = new  Player(ctx);
+          databus.gameOver = true
         // console.log('对话框');
         this.talkboxFrame = 1
         this.personal.visible = false
@@ -154,6 +178,14 @@ export default class Main {
       }
     }
   }
+
+
+
+  //游戏进入暂停状态
+  needPause(){
+
+  }
+
 
   // 游戏结束后的触摸事件处理逻辑
   touchEventHandler(e) {
@@ -196,14 +228,16 @@ export default class Main {
       if (x >= area.startX && x <= area.endX && y >= area.startY && y <= area.endY){
         this.personal.visible = true
         console.log('显示个人中心------')
-
+          databus.gamePause = true;   //需要将游戏暂停
+          this.player.stop();
+          this.player.visible = true;
+          this.player = new Player();
       }
-
       if (this.personal.visible && x >= closeBtn.startX && x <= closeBtn.endX && y >= closeBtn.startY && y <= closeBtn.endY) {
-
         this.personal.visible = false
         console.log('关闭个人中心------')
-
+          databus.gamePause = false;   //需要将游戏暂停
+          this.player.playAnimation(0,true);    //人物继续跑动
       }
 
 
@@ -274,8 +308,15 @@ export default class Main {
 
   // 游戏逻辑更新主函数
   update() {
-    if ( databus.gameOver || databus.gamePause )
-      return;
+    if ( databus.gameOver || databus.gamePause){
+        return;
+    }else if( databus.gamePause ){
+      // this.player.stop();
+      // this.player = new Player();
+      //   this.player.visible = true;
+      //   return;
+    }
+    console.log("游戏系统更新")
 
     this.bg.update()
 
