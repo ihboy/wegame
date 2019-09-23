@@ -189,9 +189,9 @@ export default class Main {
       let area = this.playerHead.btnArea;
       let closeBtn = this.personal.closeBtn;
 
-      console.log(x, y, '777777');
-      console.log(closeBtn, '^^^^^^^');
       if (x >= area.startX && x <= area.endX && y >= area.startY && y <= area.endY){
+        this.personal.fillText(ctx)
+        
         this.personal.visible = true
         console.log('显示个人中心------')
 

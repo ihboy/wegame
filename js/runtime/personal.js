@@ -10,7 +10,7 @@ const sX = (screenWidth - BG_WIDTH) / 2
 const sY = (screenHeight - BG_HEIGHT) / 2
 
 export default class Personal extends Sprite {
-  constructor() {
+  constructor(ctx) {
     super(BG_IMG_SRC, BG_WIDTH, BG_HEIGHT, sX, sY)
     console.log(sX, sY)
     this.visible = false
@@ -22,12 +22,13 @@ export default class Personal extends Sprite {
       endY: sY + 35 + 25
 
     }
+
   }
 
-  fillText (data) {
-    if(!data.length){
-      return 
-    }
+  fillText(ctx, data) {
+    // if(!data.length){
+    //   return 
+    // }
 
     ctx.fillStyle = "#ffffff"
     ctx.font = "20px Arial"
@@ -35,12 +36,13 @@ export default class Personal extends Sprite {
     ctx.textBaseline = "middle"
     let sL = 0;
     let sT = 0;
-    let src = "images/enemy/"
+    let src = "images/enemy/1.png"
 
-    for (var i=0;i< data.length; i++) {
-      let item = data[i]
+    for (var i=0;i< 1; i++) {
+      // let item = data[i]
+      console.log(ctx)
       ctx.drawImage(
-        src+'1.png',
+        src,
         sL, sT, 60, 60
       )
 
