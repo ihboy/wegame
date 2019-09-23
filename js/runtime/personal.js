@@ -40,14 +40,14 @@ export default class Personal extends Sprite {
 
     ctx.fillStyle = "#000"
     ctx.font = "14px Arial"
-    ctx.textAlign = "center"
-    ctx.textBaseline = "middle"
+    ctx.textAlign = "left"
+    // ctx.textBaseline = "middle"
     let sL = sX + 20;
     let sT = sY + 100;
     let src = "images/enemy/1.png"
 
-    let text = '山药: 健脾，补肺，固肾，益精。治脾虚泄泻，久痢，虚劳咳嗽，消渴，遗精、带下，小便频数'
-    this.wrapText(ctx, text, sX + 160, sY + 126, 180, 16)
+    let text = '山药: 健脾，补肺，固肾，益精。'
+    this.wrapText(ctx, text, sX + 70, sY + 126, 180, 16)
 
     for (var i=0;i< 1; i++) {
       // let item = data[i]

@@ -80,10 +80,8 @@ export default class Main {
     this.talkboxFrame = 0
     this.talkboxL = new TalkBox('l')
     this.talkboxR = new TalkBox('r')
-    this.talkboxContentArr = ['你好', '猜猜我是谁', '马蹄金?', '恭喜你,答对了']
-
-    this.player.playAnimation(0,true);
-
+    this.player.playAnimation(0,true)
+    this.talkboxContentArr = []
     // 清除上一局的动画
     window.cancelAnimationFrame(this.aniId);
 
@@ -174,6 +172,12 @@ export default class Main {
           databus.gameOver = true
         // console.log('对话框');
         this.talkboxFrame = 1
+        this.talkboxContentArr = []
+        this.enemyList[this.round].speechList.map(item =>  {
+          this.talkboxContentArr.push(item.master)
+          this.talkboxContentArr.push(item.materail)
+        })
+        // console.log(this.enemyList[this.round], '----')
         this.personal.visible = false
         break
       }
@@ -209,7 +213,7 @@ export default class Main {
 
     //对话框切换显示
     if(databus.gameOver){
-      if (this.talkboxFrame >= 4) {
+      if (this.talkboxFrame >= this.talkboxContentArr.length) {
           this.restart()
           return
       }
