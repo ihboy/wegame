@@ -226,16 +226,18 @@ export default class Main {
       let area = this.playerHead.btnArea;
       let closeBtn = this.personal.closeBtn;
 
-      if (x >= area.startX && x <= area.endX && y >= area.startY && y <= area.endY){
+      if (x >= area.startX && x <= area.endX && y >= area.startY && y <= area.endY   && !this.personal.visible){
+
         this.personal.visible = true
         console.log('显示个人中心------')
           databus.gamePause = true;   //需要将游戏暂停
           this.player.stop();
           this.player.visible = true;
           this.player = new Player();
-      }
-      if (this.personal.visible && x >= closeBtn.startX && x <= closeBtn.endX && y >= closeBtn.startY && y <= closeBtn.endY) {
-        this.personal.visible = false
+      }else if (this.personal.visible) {
+          // if (this.personal.visible && x >= closeBtn.startX && x <= closeBtn.endX && y >= closeBtn.startY && y <= closeBtn.endY) {
+
+              this.personal.visible = false
         console.log('关闭个人中心------')
           databus.gamePause = false;   //需要将游戏暂停
           this.player.playAnimation(0,true);    //人物继续跑动
