@@ -37,12 +37,15 @@ export default class Main {
     })
   }
   userLogin(){
+    var that = this;
     wx.login({
       success (res) {
         if (res.code) {
           HttpService.login({
             data : { code : res.code},
             successFun(res){
+              console.log(res);
+              that.userid = res.data.data.userid;
             },
             failFun(err){
               console.log(err);
@@ -106,8 +109,6 @@ export default class Main {
       enemy.init();
       databus.enemys.push(enemy)
       this.round =   enemy.round;
-
-      console.log(this.enemyList[this.round],"为即将碰撞项");
     }
   }
 
@@ -139,14 +140,30 @@ export default class Main {
     //     }
     //   }
     // })
-
     for ( let i = 0, il = databus.enemys.length; i < il;i++ ) {
-      let enemy = databus.enemys[i]
+        let enemy = databus.enemys[i]
       // console.log('人物位置：', this.player.x, this.player.y);
       // console.log('宝箱位置：', enemy.x, enemy.y);
       // this.player.visible = true
       if ( this.player.isCollideWith(enemy) ) {
-        databus.gameOver = true
+          var _obj =   this.enemyList[this.round];
+          console.log("当前碰撞对象为",_obj);
+
+          HttpService.setScore({
+              data:{
+                  "obsid":_obj.properties.id,//障碍物id
+                  "obsName":_obj.properties.name,//障碍物名称
+                  "userid": that.userid,//用户系统id
+                  "socre": _obj.properties.score//得分--障碍物重量
+              },
+              successFun:ret=>{
+
+              },
+              failFun:ret=>{
+
+              },
+          })
+          databus.gameOver = true
         // console.log('对话框');
         this.talkboxFrame = 1
         this.personal.visible = false
