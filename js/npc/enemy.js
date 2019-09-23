@@ -1,6 +1,5 @@
 import Animation from '../base/animation'
 import DataBus   from '../databus'
-
 const ENEMY_IMG_SRC = 'images/enemy.png'
 const ENEMY_WIDTH   = 60
 const ENEMY_HEIGHT  = 60
@@ -12,7 +11,6 @@ const imgArr = [
     '5.png',
     '6.png',
 ]
-
 
 const __ = {
   speed: Symbol('speed')
@@ -28,12 +26,12 @@ export default class Enemy extends Animation {
 
   constructor(obj,r) {
       // let _ENEMY_IMG_SRC = obj.ENEMY_IMG_SRC;
-      console.log(r);
       var ENEMY_IMG_SRC = "images/enemy/" + imgArr[r];
       super(ENEMY_IMG_SRC, ENEMY_WIDTH, ENEMY_HEIGHT);
+      this.round = r;
   }
 
-  init(enemyList) {
+  init() {
     this.x = this.width + window.innerWidth;
     this.y = window.innerHeight - 120;
     this[__.speed] = 6

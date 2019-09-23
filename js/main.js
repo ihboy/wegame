@@ -102,8 +102,12 @@ export default class Main {
 
       databus.enemys = [];
       let enemy = databus.pool.getItemByClass('enemy', Enemy, this.enemyList)
-      enemy.init(this.enemyList);
+
+      enemy.init();
       databus.enemys.push(enemy)
+      this.round =   enemy.round;
+
+      console.log(this.enemyList[this.round],"为即将碰撞项");
     }
   }
 
