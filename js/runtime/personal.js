@@ -9,10 +9,15 @@ const BG_HEIGHT = 440
 const sX = (screenWidth - BG_WIDTH) / 2
 const sY = (screenHeight - BG_HEIGHT) / 2
 
+
+
 export default class Personal extends Sprite {
   constructor(ctx) {
     super(BG_IMG_SRC, BG_WIDTH, BG_HEIGHT, sX, sY)
     console.log(sX, sY)
+
+
+
     this.visible = false
 
     this.closeBtn = {
@@ -23,34 +28,51 @@ export default class Personal extends Sprite {
 
     }
 
+
+
+    // this.fillContent(ctx);
   }
 
-  fillText(ctx, data) {
+  fillContent(ctx, data) {
     // if(!data.length){
     //   return 
     // }
 
-    ctx.fillStyle = "#ffffff"
-    ctx.font = "20px Arial"
+    ctx.fillStyle = "#000"
+    ctx.font = "14px Arial"
     ctx.textAlign = "center"
     ctx.textBaseline = "middle"
-    let sL = 0;
-    let sT = 0;
+    let sL = sX + 20;
+    let sT = sY + 100;
     let src = "images/enemy/1.png"
+
+    let text = '山药: 健脾，补肺，固肾，益精。治脾虚泄泻，久痢，虚劳咳嗽，消渴，遗精、带下，小便频数'
+    this.wrapText(ctx, text, sX + 140, sY + 126, 200, 16)
 
     for (var i=0;i< 1; i++) {
       // let item = data[i]
-      console.log(ctx)
-      ctx.drawImage(
-        src,
-        sL, sT, 60, 60
-      )
 
-      ctx.fillText(
-        '山药',
-        screenWidth / 2 - 40,
-        screenHeight / 2 - 100 + 175
-      )
+      let img = new Image()
+      img.src = src
+      img.onload = function() {
+        
+        ctx.drawImage(
+          img,
+          sL, sT, 60, 60
+        )
+        
+        ctx.beginPath();
+        ctx.moveTo(10, 50);
+        ctx.lineTo(10, 50)
+
+        // ctx.fillText(
+        //   '山药',
+        //   screenWidth / 2 - 40,
+        //   screenHeight / 2 - 100 + 175
+        // )
+
+      }
+
     }
 
 

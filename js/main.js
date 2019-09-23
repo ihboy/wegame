@@ -194,8 +194,6 @@ export default class Main {
       let closeBtn = this.personal.closeBtn;
 
       if (x >= area.startX && x <= area.endX && y >= area.startY && y <= area.endY){
-        this.personal.fillText(ctx)
-        
         this.personal.visible = true
         console.log('显示个人中心------')
 
@@ -239,6 +237,7 @@ export default class Main {
 
     if (this.personal.visible) {
       this.personal.drawToCanvas(ctx)
+      this.personal.fillContent(ctx)
     }
     
     if (this.talkboxFrame > 0) {

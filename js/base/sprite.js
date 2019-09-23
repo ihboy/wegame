@@ -56,4 +56,25 @@ export default class Sprite {
               && spY >= this.y
               && spY <= this.y + this.height  )
   }
+
+  wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+
+    let arrText = text.split('')
+    let line = ''
+
+    for(let i = 0; i<arrText.length; i++) {
+      let testLine = line + arrText[i]
+      let metrics = ctx.measureText(testLine)
+      let testWidth = metrics.width
+
+      if(testWidth > maxWidth && i > 0) {
+        ctx.fillText(line, x, y)
+        line = arrText[i]
+        y += lineHeight
+      }else {
+        line = testLine
+      }
+    }
+    ctx.fillText(line, x, y)
+  }
 }
