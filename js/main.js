@@ -163,6 +163,13 @@ export default class Main {
 
               },
           })
+          // this.player.stop();
+          // this.visible = false;
+          // this.isPlaying = true
+          this.player.stop();
+          this.player.visible = false;
+          this.player = null;
+          this.player = new  Player(ctx);
           databus.gameOver = true
         // console.log('对话框');
         this.talkboxFrame = 1
@@ -171,6 +178,14 @@ export default class Main {
       }
     }
   }
+
+
+
+  //游戏进入暂停状态
+  needPause(){
+
+  }
+
 
   // 游戏结束后的触摸事件处理逻辑
   touchEventHandler(e) {
@@ -215,14 +230,16 @@ export default class Main {
       if (x >= area.startX && x <= area.endX && y >= area.startY && y <= area.endY){
         this.personal.visible = true
         console.log('显示个人中心------')
-
+          databus.gamePause = true;   //需要将游戏暂停
+          this.player.stop();
+          this.player.visible = true;
+          this.player = new Player();
       }
-
       if (this.personal.visible && x >= closeBtn.startX && x <= closeBtn.endX && y >= closeBtn.startY && y <= closeBtn.endY) {
-
         this.personal.visible = false
         console.log('关闭个人中心------')
-
+          databus.gamePause = false;   //需要将游戏暂停
+          this.player.playAnimation(0,true);    //人物继续跑动
       }
 
 
@@ -292,8 +309,15 @@ export default class Main {
 
   // 游戏逻辑更新主函数
   update() {
-    if ( databus.gameOver || databus.gamePause )
-      return;
+    if ( databus.gameOver || databus.gamePause){
+        return;
+    }else if( databus.gamePause ){
+      // this.player.stop();
+      // this.player = new Player();
+      //   this.player.visible = true;
+      //   return;
+    }
+    console.log("游戏系统更新")
 
     this.bg.update()
 

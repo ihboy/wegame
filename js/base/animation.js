@@ -67,8 +67,8 @@ export default class Animation extends Sprite {
       this.imgList[this.index],
       this.x,
       this.y,
-      this.width  * 1.2,
-      this.height * 1.2
+      this.width  ,
+      this.height
     )
   }
 
