@@ -1,4 +1,4 @@
-const httpName = "http://leason.club:8082";
+const httpName = "https://leason.club:443";
 export default {
     login(obj) {
         wx.request({

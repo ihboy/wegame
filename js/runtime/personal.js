@@ -9,14 +9,9 @@ const BG_HEIGHT = 440
 const sX = (screenWidth - BG_WIDTH) / 2
 const sY = (screenHeight - BG_HEIGHT) / 2
 
-const IMG = 'images/enemy/1.png'
-
 export default class Personal extends Sprite {
   constructor(ctx) {
     super(BG_IMG_SRC, BG_WIDTH, BG_HEIGHT, sX, sY)
-    console.log(sX, sY)
-
-
 
     this.visible = false
 
@@ -27,50 +22,6 @@ export default class Personal extends Sprite {
       endY: sY + 35 + 25
 
     }
-
-
-
-    // this.fillContent(ctx);
-  }
-
-  fillContent(ctx, data) {
-    // if(!data.length){
-    //   return 
-    // }
-
-    ctx.fillStyle = "#000"
-    ctx.font = "14px Arial"
-    ctx.textAlign = "left"
-    // ctx.textBaseline = "middle"
-    let sL = sX + 20;
-    let sT = sY + 100;
-    let src = "images/enemy/1.png"
-
-    let text = '山药: 健脾，补肺，固肾，益精。'
-    this.wrapText(ctx, text, sX + 70, sY + 126, 180, 16)
-
-    for (var i=0;i< 1; i++) {
-      // let item = data[i]
-
-      let img = new Image()
-      img.src = IMG
-      img.onload = function() {
-        
-        ctx.drawImage(
-          img,
-          sL, sT, 60, 60
-        )
-  
-        // ctx.fillText(
-        //   '山药',
-        //   screenWidth / 2 - 40,
-        //   screenHeight / 2 - 100 + 175
-        // )
-
-      }
-
-    }
-
 
   }
 

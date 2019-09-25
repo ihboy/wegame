@@ -110,14 +110,16 @@ export default class Main {
 
   // 生成获取的资源
   boxGenerate() {
-
-
-  }
-
-  // 生成对话框背景
-  enemyTalkBox() {
-    this.talkboxL = new TalkBox('l')
-    this.talkboxR = new TalkBox('r')
+    if (databus.goods.length && databus.goods.length >= this.enemyList.length) {
+      return; 
+    }
+    
+    let length = 5 || this.enemyList.length
+    for (var i = 0; i < length; i++) {
+      let y = i + 1
+      let src = 'images/enemy/' + y + '.png'
+      databus.goods.push( new Box(src, i) )
+    }
   }
 
   // 全局碰撞检测
@@ -142,7 +144,7 @@ export default class Main {
     for ( let i = 0, il = databus.enemys.length; i < il;i++ ) {
         let enemy = databus.enemys[i]
       // console.log('人物位置：', this.player.x, this.player.y);
-      // console.log('宝箱位置：', enemy.x, enemy.y);
+      // console.log('宝箱位置：', enemy.x, enemy.y);F
       // this.player.visible = true
       if ( this.player.isCollideWith(enemy) ) {
           var _obj =   this.enemyList[this.round];
@@ -170,27 +172,19 @@ export default class Main {
           this.player = null;
           this.player = new  Player(ctx);
           databus.gameOver = true
-        // console.log('对话框');
-        this.talkboxFrame = 1
-        this.talkboxContentArr = []
-        this.enemyList[this.round].speechList.map(item =>  {
-          this.talkboxContentArr.push(item.master)
-          this.talkboxContentArr.push(item.materail)
-        })
-        // console.log(this.enemyList[this.round], '----')
-        this.personal.visible = false
-        break
+          // console.log('对话框');
+          this.talkboxFrame = 1
+          this.talkboxContentArr = []
+          this.enemyList[this.round].speechList.map(item =>  {
+            this.talkboxContentArr.push(item.master)
+            this.talkboxContentArr.push(item.materail)
+           })
+          // console.log(this.enemyList[this.round], '----')
+          this.personal.visible = false
+          break
       }
     }
   }
-
-
-
-  //游戏进入暂停状态
-  needPause(){
-
-  }
-
 
   // 游戏结束后的触摸事件处理逻辑
   touchEventHandler(e) {
@@ -238,13 +232,14 @@ export default class Main {
           this.player.stop();
           this.player.visible = true;
           this.player = new Player();
+
       }else if (this.personal.visible) {
           // if (this.personal.visible && x >= closeBtn.startX && x <= closeBtn.endX && y >= closeBtn.startY && y <= closeBtn.endY) {
 
-              this.personal.visible = false
+        this.personal.visible = false
         console.log('关闭个人中心------')
-          databus.gamePause = false;   //需要将游戏暂停
-          this.player.playAnimation(0,true);    //人物继续跑动
+        databus.gamePause = false;   //需要将游戏暂停
+        this.player.playAnimation(0,true);    //人物继续跑动
       }
 
 
@@ -278,8 +273,15 @@ export default class Main {
 
     if (this.personal.visible) {
       this.personal.drawToCanvas(ctx)
-      this.personal.fillContent(ctx)
-      this.box.drawToCanvas(ctx)
+      // this.personal.fillContent(ctx)
+      // this.box.drawToCanvas(ctx)
+      // this.box.fillContent(ctx)
+
+      databus.goods.forEach((item, index) => {
+        item.drawToCanvas(ctx)
+        item.fillContent(ctx, index)
+      })
+
     }
     
     if (this.talkboxFrame > 0) {
@@ -335,7 +337,7 @@ export default class Main {
             })
 
     this.enemyGenerate()
-    // this.enemyTalkBox()
+    this.boxGenerate()
     this.collisionDetection()
 
     if ( databus.frame % 20 === 0 ) {

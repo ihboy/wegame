@@ -23,7 +23,8 @@ export default class DataBus {
     this.bullets    = []
     this.enemys     = []
     this.animations = []
-    this.talkboxs    = []
+    this.talkboxs   = []
+    this.goods      = []
     this.gameOver   = false
     this.gamePause  = false
   }
@@ -51,4 +52,16 @@ export default class DataBus {
 
     this.pool.recover('bullet', bullet)
   }
+
+  /**
+  * 回收材料，进入对象池
+  * 此后不进入帧循环
+  */
+  // removeGoods(goods) {
+  //   let temp = this.goods.shift()
+
+  //   temp.visible = false
+
+  //   this.pool.recover('goods', goods)
+  // }
 }
