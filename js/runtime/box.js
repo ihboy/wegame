@@ -21,20 +21,14 @@ export default class Box extends Sprite {
 
 
   fillContent(ctx, index) {
-    // if(!data.length){
-    //   return 
-    // }
 
     ctx.fillStyle = "#333"
     ctx.font = "14px Arial"
     ctx.textAlign = "left"
     // ctx.textBaseline = "middle"
-    let sL = sX + 20;
-    let sT = sY + 100;
-    let src = "images/enemy/1.png"
 
     let text = '山药: 健脾，补肺，固肾，益精。' + index + '个'
-    this.wrapText(ctx, text, sX + 70, sY + 126 + dis * index, 180, 16)
+    this.wrapText(ctx, text, this.x + 20, this.y + 12 + dis * index, 180, 16)
 
   }
 

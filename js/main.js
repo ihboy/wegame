@@ -88,7 +88,7 @@ export default class Main {
     this.talkboxL     = new TalkBox('l')
     this.talkboxR     = new TalkBox('r')
     this.talkboxContentArr = []
-    this.showBoxLength     = 2
+    this.showBoxLength     = 5
     this.touchStart        = {}
     this.moveLine          = 0
     this.startLine         = 0
@@ -322,9 +322,11 @@ export default class Main {
 
     if (this.personal.visible) {
       this.personal.drawToCanvas(ctx)
-
+      let top = 178
       databus.goods.forEach((item, index) => {
         if (index >= this.startLine && index < this.showBoxLength) {
+          console.log(item.y)
+          item.y = top + (index - this.startLine) * 40
           item.drawToCanvas(ctx)
           item.fillContent(ctx, index)
         }
