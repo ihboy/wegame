@@ -265,7 +265,7 @@ export default class Main {
       let x = e.touches[0].clientX
       let y = e.touches[0].clientY
 
-      let ratio = 20
+      let ratio = 10
       this.moveLine = Math.floor((y - this.touchStart.y) / ratio)
       console.log('----开始滚动-----')
 
@@ -325,9 +325,9 @@ export default class Main {
       let top = 178
       databus.goods.forEach((item, index) => {
         if (index >= this.startLine && index < this.showBoxLength) {
-          console.log(item.y)
           item.y = top + (index - this.startLine) * 40
           item.drawToCanvas(ctx)
+          
           item.fillContent(ctx, index)
         }
       })

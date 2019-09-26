@@ -28,7 +28,7 @@ export default class Box extends Sprite {
     // ctx.textBaseline = "middle"
 
     let text = '山药: 健脾，补肺，固肾，益精。' + index + '个'
-    this.wrapText(ctx, text, this.x + 20, this.y + 12 + dis * index, 180, 16)
+    this.wrapText(ctx, text, this.x + 30, this.y + 12, 180, 16)
 
   }
 
