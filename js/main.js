@@ -5,9 +5,11 @@ import Box from './runtime/box'
 import GameInfo   from './runtime/gameinfo'
 import Music      from './runtime/music'
 import DataBus    from './databus'
+import Tool    from './tool'
 import TalkBox    from './runtime/talkbox'
 import HttpService from './service/httpService'
 import PlayerHead from './runtime/playerhead'
+
 
 import Personal from './runtime/personal'
 
@@ -66,22 +68,32 @@ export default class Main {
       'touchstart',
       this.clickHandler
     )
+    canvas.removeEventListener(
+      'touchmove',
+      this.touchMoveHandler
+    )
 
-    this.bg       = new BackGround(ctx)
-    this.player   = new Player(ctx)
-    this.gameinfo = new GameInfo()
-    this.music    = new Music()
-    this.playerHead = new PlayerHead()
-    this.box      =  new Box()
+    this.bg           = new BackGround(ctx)
+    this.player       = new Player(ctx)
+    this.gameinfo     = new GameInfo()
+    this.music        = new Music()
+    this.playerHead   = new PlayerHead()
+    this.box          =  new Box()
+    this.tool         = new Tool()
     this.bindLoop     = this.loop.bind(this)
     this.hasEventBind = false
     this.hasClickBind = false
-    this.personal = new Personal(ctx)
+    this.personal     = new Personal(ctx)
     this.talkboxFrame = 0
-    this.talkboxL = new TalkBox('l')
-    this.talkboxR = new TalkBox('r')
-    this.player.playAnimation(0,true)
+    this.talkboxL     = new TalkBox('l')
+    this.talkboxR     = new TalkBox('r')
     this.talkboxContentArr = []
+    this.showBoxLength     = 2
+    this.touchStart        = {}
+    this.moveLine          = 0
+    this.startLine         = 0
+    this.player.playAnimation(0,true)
+ 
     // 清除上一局的动画
     window.cancelAnimationFrame(this.aniId);
 
@@ -114,7 +126,7 @@ export default class Main {
       return; 
     }
     
-    let length = 5 || this.enemyList.length
+    let length = 6 || this.enemyList.length
     for (var i = 0; i < length; i++) {
       let y = i + 1
       let src = 'images/enemy/' + y + '.png'
@@ -217,8 +229,8 @@ export default class Main {
     }else{
       // console.log("需要触发个人中心");
       
-      let x = e.touches[0].clientX
-      let y = e.touches[0].clientY
+      let x = this.touchStart.x = e.touches[0].clientX
+      let y = this.touchStart.y = e.touches[0].clientY
 
       //显示玩家中心
       let area = this.playerHead.btnArea;
@@ -233,17 +245,54 @@ export default class Main {
           this.player.visible = true;
           this.player = new Player();
 
-      }else if (this.personal.visible) {
-          // if (this.personal.visible && x >= closeBtn.startX && x <= closeBtn.endX && y >= closeBtn.startY && y <= closeBtn.endY) {
-
+      }
+      // else if (this.personal.visible) {
+      if (this.personal.visible && x >= closeBtn.startX && x <= closeBtn.endX && y >= closeBtn.startY && y <= closeBtn.endY) {
+        this.startLine = 0
         this.personal.visible = false
         console.log('关闭个人中心------')
-        databus.gamePause = false;   //需要将游戏暂停
+        databus.gamePause = false;   //游戏继续
         this.player.playAnimation(0,true);    //人物继续跑动
       }
 
 
     }
+  }
+
+  scrollHandler(e) {
+    if (this.personal.visible) {
+
+      let x = e.touches[0].clientX
+      let y = e.touches[0].clientY
+
+      let ratio = 20
+      this.moveLine = Math.floor((y - this.touchStart.y) / ratio)
+      console.log('----开始滚动-----')
+
+      //向上滚动
+      if(this.moveLine > 0 ) {
+        if(this.moveLine + this.showBoxLength > databus.goods.length) {
+          this.startLine = databus.goods.length - this.showBoxLength
+        }else {
+          this.startLine = this.moveLine
+        }
+      }
+      
+
+      //向下滚动
+      if(this.moveLine < 0) {
+        if (-this.moveLine + this.startLine > databus.goods.length) {
+          this.startLine = databus.goods.length - this.showBoxLength
+        }else {
+          this.startLine = -this.moveLine
+        }        
+      }
+      
+      console.log(this.startLine)
+
+
+    }
+
   }
 
   /**
@@ -273,13 +322,12 @@ export default class Main {
 
     if (this.personal.visible) {
       this.personal.drawToCanvas(ctx)
-      // this.personal.fillContent(ctx)
-      // this.box.drawToCanvas(ctx)
-      // this.box.fillContent(ctx)
 
       databus.goods.forEach((item, index) => {
-        item.drawToCanvas(ctx)
-        item.fillContent(ctx, index)
+        if (index >= this.startLine && index < this.showBoxLength) {
+          item.drawToCanvas(ctx)
+          item.fillContent(ctx, index)
+        }
       })
 
     }
@@ -308,9 +356,13 @@ export default class Main {
 
       if (!this.hasClickBind) {
         this.hasClickBind = true
-        this.clickHandler = this.addClickHandler.bind(this)
+        this.touchStartHandler = this.addClickHandler.bind(this)
+        this.touchMoveHandler = this.scrollHandler.bind(this)
+        // this.touchEndHandler = this.touchendHandler.bind(this)
 
-        canvas.addEventListener('touchstart', this.clickHandler, false)
+        canvas.addEventListener('touchstart', this.touchStartHandler, false)
+        canvas.addEventListener('touchmove', this.tool.throttle(this.touchMoveHandler, 500), false)
+        // canvas.addEventListener('touchend', this.touchEndHandler, false)
 
       }
     // }
