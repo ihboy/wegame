@@ -322,12 +322,11 @@ export default class Main {
 
     if (this.personal.visible) {
       this.personal.drawToCanvas(ctx)
-      let top = 178
+      let top = databus.goods[0].y
       databus.goods.forEach((item, index) => {
         if (index >= this.startLine && index < this.startLine + this.showBoxLength) {
           item.y = top + (index - this.startLine) * 40
           item.drawToCanvas(ctx)
-          
           item.fillContent(ctx, index)
         }
       })
