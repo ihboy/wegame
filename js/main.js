@@ -271,20 +271,20 @@ export default class Main {
 
       //向上滚动
       if(this.moveLine > 0 ) {
-        if(this.moveLine + this.showBoxLength > databus.goods.length) {
-          this.startLine = databus.goods.length - this.showBoxLength
+        if (-this.moveLine + this.startLine < 0) {
+          this.startLine = 0
         }else {
-          this.startLine = this.moveLine
+          this.startLine = this.moveLine - this.startLine
         }
       }
       
 
       //向下滚动
       if(this.moveLine < 0) {
-        if (-this.moveLine + this.startLine > databus.goods.length) {
+        if (-this.moveLine + this.startLine > databus.goods.length - this.showBoxLength) {
           this.startLine = databus.goods.length - this.showBoxLength
         }else {
-          this.startLine = -this.moveLine
+          this.startLine = this.startLine + -this.moveLine
         }        
       }
       
@@ -324,7 +324,7 @@ export default class Main {
       this.personal.drawToCanvas(ctx)
       let top = 178
       databus.goods.forEach((item, index) => {
-        if (index >= this.startLine && index < this.showBoxLength) {
+        if (index >= this.startLine && index < this.startLine + this.showBoxLength) {
           item.y = top + (index - this.startLine) * 40
           item.drawToCanvas(ctx)
           
@@ -363,7 +363,7 @@ export default class Main {
         // this.touchEndHandler = this.touchendHandler.bind(this)
 
         canvas.addEventListener('touchstart', this.touchStartHandler, false)
-        canvas.addEventListener('touchmove', this.tool.throttle(this.touchMoveHandler, 500), false)
+        canvas.addEventListener('touchmove', this.tool.throttle(this.touchMoveHandler, 300), false)
         // canvas.addEventListener('touchend', this.touchEndHandler, false)
 
       }
