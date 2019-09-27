@@ -362,7 +362,7 @@ export default class Main {
         // this.touchEndHandler = this.touchendHandler.bind(this)
 
         canvas.addEventListener('touchstart', this.touchStartHandler, false)
-        canvas.addEventListener('touchmove', this.tool.throttle(this.touchMoveHandler, 300), false)
+        canvas.addEventListener('touchmove', this.tool.throttle(this.touchMoveHandler, 100), false)
         // canvas.addEventListener('touchend', this.touchEndHandler, false)
 
       }
