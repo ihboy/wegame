@@ -235,6 +235,7 @@ export default class Main {
       //显示玩家中心
       let area = this.playerHead.btnArea;
       let closeBtn = this.personal.closeBtn;
+      console.log(x, y , closeBtn)
 
       if (x >= area.startX && x <= area.endX && y >= area.startY && y <= area.endY   && !this.personal.visible){
 
@@ -261,13 +262,10 @@ export default class Main {
 
   scrollHandler(e) {
     if (this.personal.visible) {
-
       let x = e.touches[0].clientX
       let y = e.touches[0].clientY
-
       let ratio = 10
       this.moveLine = Math.floor((y - this.touchStart.y) / ratio)
-      console.log('----开始滚动-----')
 
       //向上滚动
       if(this.moveLine > 0 ) {
@@ -277,8 +275,6 @@ export default class Main {
           this.startLine = this.moveLine - this.startLine
         }
       }
-      
-
       //向下滚动
       if(this.moveLine < 0) {
         if (-this.moveLine + this.startLine > databus.goods.length - this.showBoxLength) {
@@ -287,12 +283,7 @@ export default class Main {
           this.startLine = this.startLine + -this.moveLine
         }        
       }
-      
-      console.log(this.startLine)
-
-
     }
-
   }
 
   /**

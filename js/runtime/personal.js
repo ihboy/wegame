@@ -16,11 +16,10 @@ export default class Personal extends Sprite {
     this.visible = false
 
     this.closeBtn = {
-      startX: screenWidth - sX - 35,
-      startY: sY + 35,
-      endX: screenWidth - sX,
-      endY: sY + 35 + 25
-
+      startX: sX + 75,
+      startY: sY + BG_HEIGHT - 70,
+      endX: sX + 35 + 180,
+      endY: sY + BG_HEIGHT -40
     }
 
   }
