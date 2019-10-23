@@ -242,6 +242,8 @@ export default class Main {
       console.log(x, y , closeBtn)
 
       if (x >= area.startX && x <= area.endX && y >= area.startY && y <= area.endY   && !this.personal.visible){
+        HttpService
+
 
         this.personal.visible = true
         console.log('显示个人中心------')
@@ -268,7 +270,7 @@ export default class Main {
     if (this.personal.visible) {
       let x = e.touches[0].clientX
       let y = e.touches[0].clientY
-      let ratio = 10
+      let ratio = 2
       this.moveLine = Math.floor((y - this.touchStart.y) / ratio)
 
       //向上滚动

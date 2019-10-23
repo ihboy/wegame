@@ -1,4 +1,5 @@
 import Sprite from '../base/sprite'
+// import HttpService from './service/httpService'
 
 const screenWidth = window.innerWidth
 const screenHeight = window.innerHeight
