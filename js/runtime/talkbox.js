@@ -16,7 +16,7 @@ export default class TalkBox extends Sprite {
   constructor(type) {
     let img_src = type == 'l' ? TALK_BOX_IMG_SRC_01 : TALK_BOX_IMG_SRC_02
     let sY = screenHeight - 200
-    let sX = type == 'l' ? 60 : 200
+    let sX = type == 'l' ? 0 : 200
     super(img_src, TALK_BOX_WIDTH, TALK_BOX_HEIGHT, sX, sY)
     this.type = type
     
