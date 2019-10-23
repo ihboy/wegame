@@ -13,7 +13,7 @@ export default class PlayerHead extends Sprite {
     constructor() {
       console.log("swswssw")
       // super(TALK_BOX_IMG_SRC_01, TALK_BOX_WIDTH, TALK_BOX_HEIGHT)
-      let sY = 10
+      let sY = 30
       let sX = 10
       super(HEAD_SRC, HEAD_WIDTH, HEAD_HEIGHT, sX, sY)
       // this.visible = true
