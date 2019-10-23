@@ -24,7 +24,7 @@ export default class Main {
   constructor() {
     // 维护当前requestAnimationFrame的id
     this.aniId    = 0
-    this.userLogin();
+    this.userLogin()
     this.restart();
     this.enemyList = new Array();
     var _this = this;
@@ -160,6 +160,9 @@ export default class Main {
       // console.log('宝箱位置：', enemy.x, enemy.y);F
       // this.player.visible = true
       if ( this.player.isCollideWith(enemy) ) {
+
+          console.log(this.round);
+
           var _obj =   this.enemyList[this.round];
           console.log("当前碰撞对象为",_obj);
 
