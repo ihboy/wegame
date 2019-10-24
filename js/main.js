@@ -25,7 +25,6 @@ export default class Main {
     // 维护当前requestAnimationFrame的id
     this.aniId    = 0
     this.userLogin()
-    this.restart();
     this.enemyList = new Array();
     var _this = this;
     HttpService.getAll({
@@ -39,6 +38,7 @@ export default class Main {
             console.log(err)
         }
     })
+    
   }
   userLogin(){
     var that = this;
@@ -50,6 +50,8 @@ export default class Main {
             successFun(res){
               console.log(res);
               that.userid = res.data.data.userid;
+              that.restart();
+
             },
             failFun(err){
               console.log(err);
@@ -61,7 +63,22 @@ export default class Main {
       }
     })
   }
-
+  getMyCenterData(){
+    let that = this
+    HttpService.myCenter({
+      data: {
+        id: that.userid,
+      },
+      successFun: function (data) {
+        console.log("用户中心", data);
+        that.centerData = data.data;
+        databus.goods = data.data.obsList;
+      },
+      failFun: function () {
+        console.log("获取用户中心数据失败");
+      },
+    })
+  }
   restart() {
     databus.reset()
 
@@ -95,6 +112,8 @@ export default class Main {
     this.startLine         = 0
     this.player.playAnimation(0,true)
 
+    //获取个人中心
+    this.getMyCenterData()
  
     // 清除上一局的动画
     window.cancelAnimationFrame(this.aniId);
@@ -128,7 +147,7 @@ export default class Main {
       return; 
     }
     
-    let length = 6 || this.enemyList.length
+    let length = databus.goods.length
     for (var i = 0; i < length; i++) {
       let y = i + 1
       let src = 'images/enemy/' + y + '.png'
@@ -244,24 +263,13 @@ export default class Main {
       let userid = this.userid;
       var _this = this;
       if (x >= area.startX && x <= area.endX && y >= area.startY && y <= area.endY   && !this.personal.visible){
-        HttpService.myCenter({
-            data : {
-                id : userid,
-            },
-            successFun : function (data) {
-                console.log("用户中心",data);
-                _this.centerData = data.data;
-            },
-            failFun : function(){
-                console.log("获取用户中心数据失败");
-            },
-        })
+        
         this.personal.visible = true
         console.log('显示个人中心------')
-          databus.gamePause = true;   //需要将游戏暂停
-          this.player.stop();
-          this.player.visible = true;
-          this.player = new Player();
+        databus.gamePause = true;   //需要将游戏暂停
+        this.player.stop();
+        this.player.visible = true;
+        this.player = new Player();
 
       }
       // else if (this.personal.visible) {
