@@ -13,21 +13,21 @@ const sY = (screenHeight - PERSIONAL_HEIGHT) / 2
 const dis = 40
 export default class Box extends Sprite {
 
-  constructor(src, index) {
+  constructor(src, index, data) {
 
     super(src, BOX_WIDTH, BOX_HEIGHT, sX + 40, sY + 114 + dis * index)
-
+    this.data = data
   }
 
 
-  fillContent(ctx, index) {
-
+  fillContent(ctx, obj) {
+    console.log(obj)
     ctx.fillStyle = "#333"
     ctx.font = "14px Arial"
     ctx.textAlign = "left"
     // ctx.textBaseline = "middle"
 
-    let text = '山药: 健脾，补肺，固肾，益精。' + index + '个'
+    let text = obj.data.name + ':' + obj.data.des + ',' + obj.data.score + '分'
     this.wrapText(ctx, text, this.x + 30, this.y + 12, 180, 16)
 
   }

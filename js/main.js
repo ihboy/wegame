@@ -63,7 +63,7 @@ export default class Main {
       }
     })
   }
-  getMyCenterData(fn){
+  getMyCenterData(){
     let that = this
     HttpService.myCenter({
       data: {
@@ -72,7 +72,14 @@ export default class Main {
       successFun: function (data) {
         console.log("用户中心", data);
         that.centerData = data.data;
-        fn();
+
+        // 清除上一局的动画
+        window.cancelAnimationFrame(this.aniId);
+
+        that.aniId = window.requestAnimationFrame(
+          that.bindLoop,
+          canvas
+        )
         // databus.goods = data.data.obsList;
       },
       failFun: function () {
@@ -115,14 +122,6 @@ export default class Main {
 
     //获取个人中心
     this.getMyCenterData()
- 
-    // 清除上一局的动画
-    window.cancelAnimationFrame(this.aniId);
-
-    this.aniId = window.requestAnimationFrame(
-      this.bindLoop,
-      canvas
-    )
   }
 
   /**
@@ -148,12 +147,12 @@ export default class Main {
       return; 
     }
     console.log(this.centerData, 'hahahahah')
-    // let length = this.centerData.obsList.length
+    let length = this.centerData.obsList.length
     for (var i = 0; i < length; i++) {
-      // let item = this.centerData.obsList[i]
+      let item = this.centerData.obsList[i]
       let y = i + 1
-      let src = 'images/enemy/' + y + '.png'
-      databus.goods.push( new Box(src, i) )
+      let src = item.imgUrl
+      databus.goods.push( new Box(src, i, item) )
     }
   }
 
@@ -345,7 +344,7 @@ export default class Main {
         if (index >= this.startLine && index < this.startLine + this.showBoxLength) {
           item.y = top + (index - this.startLine) * 40
           item.drawToCanvas(ctx)
-          item.fillContent(ctx, index)
+          item.fillContent(ctx, item)
         }
       })
 
