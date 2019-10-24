@@ -155,18 +155,17 @@ export default class Main {
     // if (databus.goods.length && databus.goods.length >= this.enemyList.length) {
     //   return;
     // }
-    console.log(this.centerData);
     if(!(this.centerData&&this.centerData.obsList.length>=1)){
       return;
     }
     let length = 4 || this.centerData.obsList.length
     for (var i = 0; i < length; i++) {
-      // let item = this.centerData.obsList[i]
+      let item = this.centerData.obsList[i]
       let y = i + 1
-      // let src = item.imgUrl
-      let src = 'images/enemy/'+y+'.png'
-      // databus.goods.push(new Box(src, i, item))
-      databus.goods.push( new Box(src, i, {}) )
+      let src = item.imgUrl
+      // let src = 'images/enemy/'+y+'.png'
+      databus.goods.push(new Box(src, i, item))
+      // databus.goods.push( new Box(src, i, {}) )
     }
   }
 

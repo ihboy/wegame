@@ -15,7 +15,7 @@ export default class Box extends Sprite {
 
   constructor(src, index, data) {
 
-    super(src, BOX_WIDTH, BOX_HEIGHT, sX + 40, sY + 114 + dis * index)
+    super(src, BOX_WIDTH, BOX_HEIGHT, sX + 40, sY + 120 + dis * index)
     this.data = data
   }
 
