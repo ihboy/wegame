@@ -63,7 +63,7 @@ export default class Main {
       }
     })
   }
-  getMyCenterData(){
+  getMyCenterData(fn){
     let that = this
     HttpService.myCenter({
       data: {
@@ -72,7 +72,8 @@ export default class Main {
       successFun: function (data) {
         console.log("用户中心", data);
         that.centerData = data.data;
-        databus.goods = data.data.obsList;
+        fn();
+        // databus.goods = data.data.obsList;
       },
       failFun: function () {
         console.log("获取用户中心数据失败");
@@ -146,9 +147,10 @@ export default class Main {
     if (databus.goods.length && databus.goods.length >= this.enemyList.length) {
       return; 
     }
-    
-    let length = databus.goods.length
+    console.log(this.centerData, 'hahahahah')
+    // let length = this.centerData.obsList.length
     for (var i = 0; i < length; i++) {
+      // let item = this.centerData.obsList[i]
       let y = i + 1
       let src = 'images/enemy/' + y + '.png'
       databus.goods.push( new Box(src, i) )
