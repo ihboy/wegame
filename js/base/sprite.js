@@ -5,7 +5,7 @@ export default class Sprite {
   constructor(imgSrc = '', width = 0, height = 0, x = 0, y = 0, sx = 0, sy = 0, sw = 0, sh = 0) {
 
     // console.log(imgSrc,width,height);
-
+    
     this.img     = new Image()
     this.img.src = imgSrc
 

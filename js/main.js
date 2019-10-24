@@ -337,12 +337,12 @@ export default class Main {
     this.bg.render(ctx)
     this.playerHead.drawToCanvas(ctx)
 
-      databus.bullets
-          .concat(databus.enemys)
-          .forEach((item) => {
-            // console.log('item', item)
-              item.drawToCanvas(ctx)
-            })
+    databus.bullets
+        .concat(databus.enemys)
+        .forEach((item) => {
+          // console.log('item------', item)
+            item.drawToCanvas(ctx)
+          })
 
     this.player.drawToCanvas(ctx)
 
