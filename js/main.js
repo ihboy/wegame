@@ -152,8 +152,12 @@ export default class Main {
 
   // 生成获取的资源
   boxGenerate() {
-    if (databus.goods.length && databus.goods.length >= this.enemyList.length) {
-      return; 
+    // if (databus.goods.length && databus.goods.length >= this.enemyList.length) {
+    //   return;
+    // }
+    console.log(this.centerData);
+    if(!(this.centerData&&this.centerData.obsList.length>=1)){
+      return;
     }
     let length = 4 || this.centerData.obsList.length
     for (var i = 0; i < length; i++) {
@@ -417,7 +421,6 @@ export default class Main {
             })
 
     this.enemyGenerate()
-    this.boxGenerate()
     this.collisionDetection()
 
     if ( databus.frame % 20 === 0 ) {
@@ -429,6 +432,7 @@ export default class Main {
   // 实现游戏帧循环
   loop() {
     databus.frame++
+    this.boxGenerate()
 
     this.update()
     this.render()
