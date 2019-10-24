@@ -73,13 +73,13 @@ export default class Main {
         console.log("用户中心", data);
         that.centerData = data.data;
 
-        // 清除上一局的动画
-        window.cancelAnimationFrame(this.aniId);
+        // // 清除上一局的动画
+        // window.cancelAnimationFrame(this.aniId);
 
-        that.aniId = window.requestAnimationFrame(
-          that.bindLoop,
-          canvas
-        )
+        // that.aniId = window.requestAnimationFrame(
+        //   that.bindLoop,
+        //   canvas
+        // )
         // databus.goods = data.data.obsList;
       },
       failFun: function () {
@@ -122,6 +122,15 @@ export default class Main {
 
     //获取个人中心
     this.getMyCenterData()
+
+    // 清除上一局的动画
+    window.cancelAnimationFrame(this.aniId);
+
+    this.aniId = window.requestAnimationFrame(
+      this.bindLoop,
+      canvas
+    )
+
   }
 
   /**
@@ -146,13 +155,14 @@ export default class Main {
     if (databus.goods.length && databus.goods.length >= this.enemyList.length) {
       return; 
     }
-    console.log(this.centerData, 'hahahahah')
-    let length = this.centerData.obsList.length
+    let length = 4 || this.centerData.obsList.length
     for (var i = 0; i < length; i++) {
-      let item = this.centerData.obsList[i]
+      // let item = this.centerData.obsList[i]
       let y = i + 1
-      let src = item.imgUrl
-      databus.goods.push( new Box(src, i, item) )
+      // let src = item.imgUrl
+      let src = 'images/enemy/'+y+'.png'
+      // databus.goods.push(new Box(src, i, item))
+      databus.goods.push( new Box(src, i, {}) )
     }
   }
 

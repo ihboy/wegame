@@ -21,7 +21,6 @@ export default class Box extends Sprite {
 
 
   fillContent(ctx, obj) {
-    console.log(obj)
     ctx.fillStyle = "#333"
     ctx.font = "14px Arial"
     ctx.textAlign = "left"
