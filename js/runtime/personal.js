@@ -22,6 +22,12 @@ export default class Personal extends Sprite {
       endX: sX + 35 + 180,
       endY: sY + BG_HEIGHT -40
     }
+    this.closeBtn2 = {
+      startX: sX + 260,
+      startY: sY + 30,
+      endX: sX + 35 + 260,
+      endY: sY + 70
+    }
 
   }
 

@@ -273,10 +273,12 @@ export default class Main {
       //显示玩家中心
       let area = this.playerHead.btnArea;
       let closeBtn = this.personal.closeBtn;
-      console.log(x, y , closeBtn)
+      let closeBtn2 = this.personal.closeBtn2;
+      // console.log(x, y, closeBtn, '---------')
+      console.log(x, y , closeBtn2, '+++++++++')
       let userid = this.userid;
       var _this = this;
-      if (x >= area.startX && x <= area.endX && y >= area.startY && y <= area.endY   && !this.personal.visible){
+      if (x >= area.startX && x <= area.endX && y >= area.startY && y <= area.endY   && !this.personal.visible) {
         
         this.personal.visible = true
         console.log('显示个人中心------')
@@ -287,7 +289,7 @@ export default class Main {
 
       }
       // else if (this.personal.visible) {
-      if (this.personal.visible && x >= closeBtn.startX && x <= closeBtn.endX && y >= closeBtn.startY && y <= closeBtn.endY) {
+      if ((this.personal.visible && x >= closeBtn.startX && x <= closeBtn.endX && y >= closeBtn.startY && y <= closeBtn.endY) || (this.personal.visible && x >= closeBtn2.startX && x <= closeBtn2.endX && y >= closeBtn2.startY && y <= closeBtn2.endY)) {
         this.startLine = 0
         this.personal.visible = false
         console.log('关闭个人中心------')
