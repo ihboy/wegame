@@ -162,7 +162,7 @@ export default class Main {
     for (var i = 0; i < length; i++) {
       let item = this.centerData.obsList[i]
       let y = i + 1
-      let src = item.imgUrl
+      let src = 'https://shshijianjia.cn/'+ item.imgUrl
       // let src = 'images/enemy/'+y+'.png'
       databus.goods.push(new Box(src, i, item))
       // databus.goods.push( new Box(src, i, {}) )
