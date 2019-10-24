@@ -52,7 +52,7 @@ export default {
             },
         })
     },
-    myCenter() {
+    myCenter(obj) {
         wx.request({
             url: httpName + "/api/remote/me/center",
             data: obj.data,

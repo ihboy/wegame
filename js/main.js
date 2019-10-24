@@ -94,6 +94,7 @@ export default class Main {
     this.moveLine          = 0
     this.startLine         = 0
     this.player.playAnimation(0,true)
+
  
     // 清除上一局的动画
     window.cancelAnimationFrame(this.aniId);
@@ -171,7 +172,7 @@ export default class Main {
                   "obsid":_obj.properties.id,//障碍物id
                   "obsName":_obj.properties.name,//障碍物名称
                   "userid": that.userid,//用户系统id
-                  "socre": _obj.properties.score//得分--障碍物重量
+                  "score": _obj.properties.score//得分--障碍物重量
               },
               successFun:ret=>{
 
@@ -220,7 +221,7 @@ export default class Main {
 
   addClickHandler(e) {
     e.preventDefault()
-
+      var _this = this;
     //对话框切换显示
     if(databus.gameOver){
       if (this.talkboxFrame >= this.talkboxContentArr.length) {
@@ -240,11 +241,21 @@ export default class Main {
       let area = this.playerHead.btnArea;
       let closeBtn = this.personal.closeBtn;
       console.log(x, y , closeBtn)
-
+      let userid = this.userid;
+      var _this = this;
       if (x >= area.startX && x <= area.endX && y >= area.startY && y <= area.endY   && !this.personal.visible){
-        HttpService
-
-
+        HttpService.myCenter({
+            data : {
+                id : userid,
+            },
+            successFun : function (data) {
+                console.log("用户中心",data);
+                _this.centerData = data.data;
+            },
+            failFun : function(){
+                console.log("获取用户中心数据失败");
+            },
+        })
         this.personal.visible = true
         console.log('显示个人中心------')
           databus.gamePause = true;   //需要将游戏暂停
