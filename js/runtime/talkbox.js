@@ -17,7 +17,7 @@ export default class TalkBox extends Sprite {
     let img_src = type == 'l' ? TALK_BOX_IMG_SRC_01 : TALK_BOX_IMG_SRC_02
     let sY = screenHeight - 200
     let lX = screenWidth / 2 - 180 > 50 ? screenWidth / 2 - 180 : 50;
-    let rX = screenWidth / 2 >= 190 ? screenWidth / 2 + 80 : screenWidth - 110;
+    let rX = screenWidth / 2 >= 200 ? screenWidth / 2 + 70 : screenWidth - 110;
     let sX = type == 'l' ? lX : rX;
     super(img_src, TALK_BOX_WIDTH, TALK_BOX_HEIGHT, sX, sY)
     this.type = type
@@ -27,7 +27,7 @@ export default class TalkBox extends Sprite {
    
   renderTalkBoxContent(ctx, text) {
     let lX = screenWidth / 2 - 180 > 50 ? screenWidth / 2 - 180 : 50;
-    let rX = screenWidth / 2 >= 190 ? screenWidth / 2 + 80 : screenWidth - 110;
+    let rX = screenWidth / 2 >= 200 ? screenWidth / 2 + 70 : screenWidth - 110;
     let mw = ctx.measureText(text).width
     ctx.fillStyle = "#000"
     ctx.font = "12px Arial"
@@ -36,7 +36,7 @@ export default class TalkBox extends Sprite {
       ctx,
       text,
       this.type == 'l' ? lX + (TALK_BOX_WIDTH - mw) / 2 : rX + (TALK_BOX_WIDTH - mw) / 2,
-      screenHeight - 160,
+      this.type == 'l' ? screenHeight - 160 : screenHeight - 155,
       TALK_BOX_WIDTH,
       20
     )

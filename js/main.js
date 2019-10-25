@@ -13,6 +13,11 @@ import PlayerHead from './runtime/playerhead'
 
 import Personal from './runtime/personal'
 
+const screenWidth = window.innerWidth
+const screenHeight = window.innerHeight
+
+canvas.width = screenWidth
+canvas.height = screenHeight
 let ctx   = canvas.getContext('2d')
 let databus = new DataBus()
 
@@ -332,7 +337,7 @@ export default class Main {
    * 每一帧重新绘制所有的需要展示的元素
    */
   render() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.clearRect(0, 0, canvas.width*2, canvas.height*2)
 
     this.bg.render(ctx)
     this.playerHead.drawToCanvas(ctx)
