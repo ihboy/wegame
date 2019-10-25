@@ -22,12 +22,14 @@ export default class Box extends Sprite {
 
   fillContent(ctx, obj) {
     ctx.fillStyle = "#333"
-    ctx.font = "14px Arial"
+    ctx.font = "12px Arial"
     ctx.textAlign = "left"
     // ctx.textBaseline = "middle"
 
-    let text = obj.data.name + ':' + obj.data.des + ',' + obj.data.score + '分'
-    this.wrapText(ctx, text, this.x + 30, this.y + 12, 180, 16)
+    let text = obj.data.name + ' : ' + obj.data.score + '分'
+    let text1 = obj.data.des
+    this.wrapText(ctx, text, this.x + 30, this.y + 12, 180, 12)
+    this.wrapText(ctx, text1, this.x + 30, this.y + 12 + 12, 180, 12)
 
   }
 
