@@ -158,7 +158,7 @@ export default class Main {
     if(!(this.centerData&&this.centerData.obsList.length>=1)){
       return;
     }
-    let length = 4 || this.centerData.obsList.length
+    let length = this.centerData.obsList.length
     for (var i = 0; i < length; i++) {
       let item = this.centerData.obsList[i]
       let y = i + 1
